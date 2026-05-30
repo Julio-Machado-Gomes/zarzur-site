@@ -74,7 +74,7 @@ function Diferenciais() {
           <p className="zzc-eyebrow on-green">Por que ZARZUR</p>
           <h2>Solidez que se constrói<br/>com o tempo.</h2>
           {/* ✏️ EDITAR: parágrafo sobre a empresa */}
-          <p>Mais de duas décadas dedicadas a transformar a saúde financeira de condomínios em todo o país.</p>
+          <p>Soluções financeiras desenhadas para transformar a saúde financeira de condomínios em todo o país.</p>
         </div>
         <ul className="zzc-diff-list">
           {DIFF.map(([ic, t, d]) => (
