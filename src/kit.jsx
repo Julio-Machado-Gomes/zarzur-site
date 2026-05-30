@@ -1,0 +1,124 @@
+/* ZARZUR website kit — primitives, header, footer. */
+
+const A = "assets/";
+
+function IMG(name) {
+  return A + name;
+}
+
+function Lu({ name, className }) {
+  return <i data-lucide={name} className={"lu " + (className || "")}></i>;
+}
+
+/* Real 3D spinning coin */
+function Coin3D({ size = 340, spin = 22, className = "" }) {
+  const R = Math.round(size * 0.484);
+  const T = Math.max(14, Math.round(size * 0.074));
+  const N = Math.max(120, Math.round(size * 0.62));
+  const segW = (2 * Math.PI * R) / N + 1.3;
+  const half = T / 2;
+  const segs = Array.from({ length: N }, (_, i) => {
+    const a = (360 / N) * i;
+    return <span key={i} style={{
+      width: segW.toFixed(2) + "px", height: T + "px",
+      marginTop: (-half) + "px", marginLeft: (-segW / 2).toFixed(2) + "px",
+      transform: `rotateZ(${a}deg) translateY(${-R}px) rotateX(90deg)`,
+    }} />;
+  });
+  return (
+    <div className={"zzc-coin3d " + className} style={{ width: size, height: size, "--spin": spin + "s" }} aria-label="Selo ZARZUR — Soluções Financeiras" role="img">
+      <div className="zzc-coin3d-stage">
+        <div className="zzc-coin3d-inner">
+          <div className="zzc-coin-edge">{segs}</div>
+          <img className="zzc-coin-face front" src={IMG("coin-disc.png")} alt="" style={{ transform: `translateZ(${half}px)` }} />
+          <img className="zzc-coin-face back" src={IMG("coin-disc.png")} alt="" style={{ transform: `rotateY(180deg) translateZ(${half}px)` }} />
+        </div>
+      </div>
+      <span className="zzc-coin-shadow"></span>
+    </div>
+  );
+}
+
+function Btn({ variant = "gold", size, icon, children, onClick, href }) {
+  const cls = `zzc-btn zzc-btn-${variant}${size ? " zzc-btn-" + size : ""}`;
+  const inner = (<>{children}{icon && <Lu name={icon} />}</>);
+  if (href) return <a className={cls} href={href} onClick={onClick}>{inner}</a>;
+  return <button className={cls} onClick={onClick}>{inner}</button>;
+}
+
+const NAV = [
+  ["Soluções", "#solucoes"],
+  ["Como funciona", "#como-funciona"],
+  ["A ZARZUR", "#diferenciais"],
+  ["Dúvidas", "#faq"],
+  ["Contato", "#contato"],
+];
+
+function Header({ solid, onSimulate }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <header className={"zzc-header " + (solid ? "solid" : "float")}>
+      <div className="zzc-container zzc-headrow">
+        <a href="#topo" aria-label="ZARZUR">
+          <img className="zzc-logo" src={IMG("marca-horizontal.svg")} alt="ZARZUR Soluções Financeiras" />
+          <img className="zzc-logo rev" src={IMG("marca-horizontal-white.svg")} alt="ZARZUR" />
+        </a>
+        <nav className="zzc-nav">
+          {NAV.map(([t, h]) => <a key={t} href={h}>{t}</a>)}
+        </nav>
+        <Btn variant="ghost" size="sm" onClick={onSimulate}>
+          <span className="zzc-headcta">Fale com um especialista</span>
+        </Btn>
+        <button className="zzc-burger" onClick={() => setOpen(o => !o)} aria-label="Menu">
+          <Lu name={open ? "x" : "menu"} />
+        </button>
+      </div>
+      <div className={"zzc-mobile" + (open ? " open" : "")} onClick={() => setOpen(false)}>
+        {NAV.map(([t, h]) => <a key={t} href={h}>{t}</a>)}
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="zzc-footer" id="rodape">
+      <div className="zzc-container">
+        <div className="zzc-foot-grid">
+          <div className="zzc-foot-brand">
+            <img className="zzc-foot-logo" src={IMG("marca-vertical-white.svg")} alt="ZARZUR" />
+            <p>Soluções financeiras para condomínios — garantia de receita, financiamento de obras, jurídico e auditoria, com atendimento próximo e transparente.</p>
+            <div className="zzc-foot-soc">
+              <a href="#"><img src={IMG("social-icon-3.png")} alt="Instagram" /></a>
+              <a href="#"><img src={IMG("social-icon-2.png")} alt="LinkedIn" /></a>
+              <a href="#"><img src={IMG("social-icon-4.png")} alt="Facebook" /></a>
+            </div>
+          </div>
+          <div className="zzc-foot-col">
+            <h5>Soluções</h5>
+            <a href="#">Garantia de Receita</a><a href="#">Linha de Financiamento</a><a href="#">Assessoria Jurídica</a><a href="#">Tribunal Arbitral</a>
+          </div>
+          <div className="zzc-foot-col">
+            <h5>A empresa</h5>
+            <a href="#">Sobre a ZARZUR</a><a href="#">Nossos valores</a><a href="#">Trabalhe conosco</a><a href="#">Blog</a>
+          </div>
+          <div className="zzc-foot-col">
+            <h5>Atendimento</h5>
+            {/* ✏️ EDITAR: telefones dos escritórios */}
+            <a href="tel:+5511978947653">São Paulo · +55 11 97894-7653</a>
+            <a href="tel:+5527999734394">Espírito Santo · +55 27 99973-4394</a>
+            <a href="#contato">Fale conosco</a>
+            <a href="#">Privacidade</a>
+          </div>
+        </div>
+        <div className="zzc-foot-bottom">
+          {/* ✏️ EDITAR: ano e CNPJ */}
+          <span>© 2025 ZARZUR Soluções Financeiras. Todos os direitos reservados.</span>
+          <span>CNPJ 00.000.000/0001-00</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+Object.assign(window, { Lu, Btn, Header, Footer, A, IMG, Coin3D });
