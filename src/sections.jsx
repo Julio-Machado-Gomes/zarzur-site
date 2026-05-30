@@ -28,9 +28,9 @@ function Hero({ onSimulate }) {
 
 /* ✏️ EDITAR: números de impacto */
 const STATS = [
-  ["+20", "anos", "de experiência em condomínios"],
   ["100", "%", "da receita garantida"],
-  ["+800", "", "condomínios atendidos"],
+  ["+50", "", "condomínios atendidos"],
+  ["+R$ 20", "mi", "em obras financiadas"],
   ["60", "meses", "de prazo para obras"],
 ];
 function Trust() {
