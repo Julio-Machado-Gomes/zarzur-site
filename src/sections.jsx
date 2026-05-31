@@ -8,16 +8,21 @@ function Hero({ onSimulate }) {
         <div>
           {/* ✏️ EDITAR: texto do hero */}
           <p className="zzc-eyebrow on-green">Soluções Financeiras para Condomínios</p>
-          <h1>Inadimplência <em>zero</em> e tranquilidade para o seu condomínio.</h1>
-          <p>Garantimos a receita do condomínio, financiamos obras e cuidamos da parte jurídica — para o síndico focar na gestão, sem dor de cabeça.</p>
+          <h1>O seu condomínio recebe <em>todo mês</em>, no dia certo.</h1>
+          <p>A ZARZUR assume a inadimplência por você — com lastro, contrato registrado e auditoria. O síndico fecha o caixa sem depender de quem pagou ou não.</p>
+          <div className="zzc-hero-proof">
+            <span><b>+R$ 20 mi</b> garantidos</span>
+            <span><b>+50</b> condomínios em operação</span>
+            <span><b>100%</b> de repasse no dia combinado</span>
+          </div>
           <div className="zzc-hero-cta">
-            <Btn variant="gold" icon="arrow-right" href="#solucoes">Conheça as soluções</Btn>
-            <Btn variant="ghost-white" onClick={onSimulate}>Fale com um especialista</Btn>
+            <Btn variant="gold" icon="arrow-right" onClick={onSimulate}>Falar com um especialista</Btn>
+            <Btn variant="ghost-white" href="#como-funciona">Como funciona</Btn>
           </div>
           <div className="zzc-hero-tags">
-            <span className="zzc-hero-tag"><Lu name="shield-check" />Garantia de receita</span>
-            <span className="zzc-hero-tag"><Lu name="building-2" />Foco em condomínios</span>
-            <span className="zzc-hero-tag"><Lu name="scale" />Suporte jurídico</span>
+            <span className="zzc-hero-tag"><Lu name="shield-check" />Receita garantida</span>
+            <span className="zzc-hero-tag"><Lu name="file-check" />Contrato registrado</span>
+            <span className="zzc-hero-tag"><Lu name="scale" />Suporte jurídico próprio</span>
           </div>
         </div>
         <Coin3D size={360} spin={24} />
@@ -28,10 +33,10 @@ function Hero({ onSimulate }) {
 
 /* ✏️ EDITAR: números de impacto */
 const STATS = [
-  ["100", "%", "da receita garantida"],
-  ["+50", "", "condomínios atendidos"],
+  ["100", "%", "de repasse no dia certo"],
+  ["+50", "", "condomínios em operação"],
   ["+R$ 20", "mi", "em obras financiadas"],
-  ["60", "meses", "de prazo para obras"],
+  ["7", "dias", "para liberar o crédito"],
 ];
 function Trust() {
   return (
@@ -55,7 +60,7 @@ const SERVICES = [
   ["scale", "Assessoria Jurídica", "Assessoria jurídica completa para síndicos e proprietários, reduzindo custos e minimizando riscos em locações e gestão."],
   ["file-text", "Atualização de Convenção de Condomínio", "Atualização de normas condominiais essenciais, evitando conflitos judiciais e assegurando convivência justa e alinhada às leis."],
   ["gavel", "Tribunal Arbitral", "Tribunal Arbitral especializado resolve conflitos condominiais rapidamente, com menor custo e sem necessidade de advogado."],
-  ["file-search", "Auditoria Externa", "Análise das contas condominiais para reduzir despesas e implementar soluções tecnológicas personalizadas para cada condomínio."],
+  ["file-search", "Auditoria de Despesas", "Análise independente das contas de despesa do condomínio para identificar cobranças indevidas, pagamentos duplicados e oportunidades de redução. Escopo restrito a contas de fornecedores — nunca à receita gerida pela ZARZUR."],
 ];
 function Services() {
   return (
