@@ -89,9 +89,10 @@ function Footer() {
             <img className="zzc-foot-logo" src={IMG("marca-vertical-white.svg")} alt="ZARZUR" />
             <p>Soluções financeiras para condomínios — garantia de receita, financiamento de obras, jurídico e auditoria, com atendimento próximo e transparente.</p>
             <div className="zzc-foot-soc">
-              <a href="#"><img src={IMG("social-icon-3.png")} alt="Instagram" /></a>
-              <a href="#"><img src={IMG("social-icon-2.png")} alt="LinkedIn" /></a>
-              <a href="#"><img src={IMG("social-icon-4.png")} alt="Facebook" /></a>
+              {/* ✏️ EDITAR: redes sociais */}
+              <a href="https://instagram.com/zarzurgarantidora" target="_blank" rel="noopener" aria-label="Instagram"><img src={IMG("social-icon-3.png")} alt="Instagram" /></a>
+              <a href="#" aria-label="LinkedIn (em breve)"><img src={IMG("social-icon-2.png")} alt="LinkedIn" /></a>
+              <a href="#" aria-label="Facebook (em breve)"><img src={IMG("social-icon-4.png")} alt="Facebook" /></a>
             </div>
           </div>
           <div className="zzc-foot-col">
