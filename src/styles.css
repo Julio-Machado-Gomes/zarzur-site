@@ -174,7 +174,7 @@ a{color:inherit;text-decoration:none}
 .zzc-header.float{background:transparent}
 .zzc-header.solid{background:rgba(251,250,246,.86);backdrop-filter:blur(12px);border-color:var(--zz-border);box-shadow:0 1px 0 rgba(26,29,27,.03)}
 .zzc-headrow{display:flex;align-items:center;gap:32px;height:74px}
-.zzc-logo{height:34px}
+.zzc-logo{height:44px}
 .zzc-logo.rev{display:none}
 .zzc-header.float .zzc-logo{display:none}
 .zzc-header.float .zzc-logo.rev{display:block}
@@ -409,4 +409,43 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-foot-grid{grid-template-columns:1fr 1fr}
   .zzc-mobile.open{display:block;position:fixed;inset:74px 0 0;background:var(--zz-green-800);z-index:40;padding:32px}
   .zzc-mobile a{display:block;color:#fff;font-size:20px;font-family:var(--zz-font-serif);padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+}
+/* ============================================================
+   Aditivos: hero-proof, Garantias, Cases (análise crítica v2)
+   ============================================================ */
+
+/* Hero proof line */
+.zzc-hero-proof{display:flex;flex-wrap:wrap;gap:0;margin:24px 0 28px;padding:14px 0;border-top:1px solid rgba(196,168,106,.25);border-bottom:1px solid rgba(196,168,106,.25)}
+.zzc-hero-proof span{color:#E8E1CB;font-size:13px;letter-spacing:.04em;padding:0 18px;border-right:1px solid rgba(196,168,106,.25)}
+.zzc-hero-proof span:first-child{padding-left:0}
+.zzc-hero-proof span:last-child{border-right:none}
+.zzc-hero-proof b{color:var(--zz-gold-400);font-weight:700;margin-right:6px}
+
+/* Garantias grid */
+.zzc-garantias-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.zzc-garantia{display:flex;gap:20px;background:#fff;border:1px solid var(--zz-line);border-radius:14px;padding:28px}
+.zzc-garantia-ico{flex-shrink:0;width:52px;height:52px;border-radius:12px;background:var(--zz-green);color:var(--zz-gold-400);display:flex;align-items:center;justify-content:center}
+.zzc-garantia-ico .lu{width:24px;height:24px}
+.zzc-garantia h3{margin:0 0 8px;font-family:var(--zz-font-serif);font-size:19px;color:var(--zz-green)}
+.zzc-garantia p{margin:0;font-size:14.5px;line-height:1.55;color:var(--zz-fg-2)}
+
+/* Cases grid */
+.zzc-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.zzc-case{position:relative;background:#fff;border:1px solid var(--zz-line);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:18px}
+.zzc-case.is-placeholder{border-style:dashed;border-color:var(--zz-gold-400)}
+.zzc-case-flag{position:absolute;top:14px;right:14px;background:var(--zz-gold);color:#fff;font-size:10px;letter-spacing:.14em;padding:4px 8px;border-radius:6px;font-weight:600}
+.zzc-case header{padding-bottom:14px;border-bottom:1px solid var(--zz-line)}
+.zzc-case header h3{margin:0 0 4px;font-family:var(--zz-font-serif);font-size:18px;color:var(--zz-green)}
+.zzc-case header span{font-size:13px;color:var(--zz-fg-3);letter-spacing:.03em}
+.zzc-case-body{display:flex;flex-direction:column;gap:14px}
+.zzc-case-body b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--zz-gold-600);margin-bottom:4px;font-weight:600}
+.zzc-case-body p{margin:0;font-size:14px;line-height:1.5;color:var(--zz-fg-2)}
+
+/* Mobile */
+@media (max-width:768px){
+  .zzc-hero-proof{flex-direction:column;gap:10px;align-items:flex-start}
+  .zzc-hero-proof span{border-right:none;padding:0;border-bottom:1px solid rgba(196,168,106,.18);padding-bottom:8px;width:100%}
+  .zzc-hero-proof span:last-child{border-bottom:none}
+  .zzc-garantias-grid{grid-template-columns:1fr}
+  .zzc-cases-grid{grid-template-columns:1fr}
 }
