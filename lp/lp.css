@@ -1,0 +1,116 @@
+/* ============================================================
+   ZARZUR — Landing Pages
+   Estilos específicos para LPs stand-alone.
+   Usa as variáveis e componentes base de ../src/styles.css
+   ============================================================ */
+
+/* Header simples da LP (volta para o site institucional) */
+.lp-topbar{position:sticky;top:0;z-index:30;background:rgba(4,72,40,.96);backdrop-filter:blur(10px);padding:14px 0}
+.lp-topbar-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.lp-topbar-logo{height:36px}
+.lp-topbar-back{color:#E8E1CB;font-size:13px;letter-spacing:.04em;display:flex;align-items:center;gap:8px;transition:color .2s}
+.lp-topbar-back:hover{color:var(--zz-gold-400)}
+.lp-topbar-back .lu{width:16px;height:16px}
+.lp-topbar-wa{display:inline-flex;align-items:center;gap:8px;background:var(--zz-gold);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;transition:background .2s}
+.lp-topbar-wa:hover{background:var(--zz-gold-600)}
+.lp-topbar-wa .lu{width:18px;height:18px}
+
+/* Hero da LP — full bleed dark */
+.lp-hero{background:var(--zz-green-800);color:#fff;padding:80px 0 100px;position:relative;overflow:hidden}
+.lp-hero-wm{position:absolute;right:-180px;top:50%;transform:translateY(-50%);width:780px;opacity:.05;pointer-events:none}
+.lp-hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
+.lp-hero-eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--zz-gold-400);font-weight:600;margin:0 0 18px;display:flex;align-items:center;gap:12px}
+.lp-hero-eyebrow::before{content:"";width:28px;height:2px;background:var(--zz-gold)}
+.lp-hero h1{font-family:var(--zz-font-serif);font-size:54px;line-height:1.05;margin:0 0 22px;font-weight:500;letter-spacing:-.01em}
+.lp-hero h1 em{font-style:italic;color:var(--zz-gold-400);font-weight:400}
+.lp-hero-sub{font-size:18px;line-height:1.55;color:#E8E1CB;margin:0 0 32px;max-width:560px}
+.lp-hero-bullets{display:flex;flex-direction:column;gap:12px;margin:0 0 36px;padding:0;list-style:none}
+.lp-hero-bullets li{display:flex;align-items:flex-start;gap:12px;color:#FBFAF6;font-size:15.5px}
+.lp-hero-bullets li .lu{flex-shrink:0;width:20px;height:20px;color:var(--zz-gold-400);margin-top:2px}
+.lp-hero-bullets li b{color:var(--zz-gold-400);font-weight:600}
+.lp-hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.lp-cta-wa{display:inline-flex;align-items:center;gap:12px;background:var(--zz-gold);color:#fff;padding:18px 32px;border-radius:10px;font-weight:600;font-size:16px;letter-spacing:.02em;transition:transform .15s,background .2s;box-shadow:0 8px 24px rgba(168,136,64,.35)}
+.lp-cta-wa:hover{background:var(--zz-gold-600);transform:translateY(-2px)}
+.lp-cta-wa .lu{width:22px;height:22px}
+.lp-cta-hint{color:#A9A496;font-size:13px}
+
+/* Card de prova ao lado do hero */
+.lp-hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(196,168,106,.3);border-radius:16px;padding:36px 32px;backdrop-filter:blur(8px)}
+.lp-hero-card-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--zz-gold-400);margin:0 0 24px;font-weight:600;text-align:center}
+.lp-hero-card-stats{display:flex;flex-direction:column;gap:20px}
+.lp-hero-card-stat{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.lp-hero-card-stat:last-child{border-bottom:none;padding-bottom:0}
+.lp-hero-card-stat b{font-family:var(--zz-font-serif);font-size:32px;color:#fff;font-weight:500}
+.lp-hero-card-stat span{font-size:13px;color:#E8E1CB;text-align:right;max-width:60%;line-height:1.4}
+
+/* Stripe de confiança logo abaixo do hero */
+.lp-trust-strip{background:#fff;border-bottom:1px solid var(--zz-line);padding:24px 0}
+.lp-trust-strip-row{display:flex;align-items:center;justify-content:space-around;gap:24px;flex-wrap:wrap}
+.lp-trust-item{display:flex;align-items:center;gap:12px;color:var(--zz-fg-2);font-size:14px}
+.lp-trust-item .lu{width:20px;height:20px;color:var(--zz-gold)}
+.lp-trust-item b{color:var(--zz-green);font-weight:600}
+
+/* Seções genéricas */
+.lp-section{padding:88px 0}
+.lp-section.alt{background:var(--zz-paper)}
+.lp-section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.lp-section-head .zzc-eyebrow{justify-content:center;color:var(--zz-gold-600)}
+.lp-section-head .zzc-eyebrow::before{background:var(--zz-gold)}
+.lp-section-head h2{font-family:var(--zz-font-serif);font-size:42px;line-height:1.1;color:var(--zz-green);margin:0 0 18px;font-weight:500;letter-spacing:-.01em}
+.lp-section-head p{font-size:17px;line-height:1.6;color:var(--zz-fg-2);margin:0}
+
+/* Como funciona — passos numerados */
+.lp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+.lp-step{background:#fff;border:1px solid var(--zz-line);border-radius:14px;padding:36px 28px;position:relative}
+.lp-step-num{position:absolute;top:-20px;left:28px;width:48px;height:48px;border-radius:50%;background:var(--zz-green);color:var(--zz-gold-400);font-family:var(--zz-font-serif);font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;border:4px solid var(--zz-paper)}
+.lp-step h3{margin:18px 0 12px;font-family:var(--zz-font-serif);font-size:22px;color:var(--zz-green)}
+.lp-step p{margin:0;font-size:15px;line-height:1.55;color:var(--zz-fg-2)}
+
+/* Para quem / Não é para */
+.lp-fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1000px;margin:0 auto}
+.lp-fit{padding:36px 32px;border-radius:14px}
+.lp-fit.for{background:#F2F6F2;border:1px solid #C8DCC8}
+.lp-fit.against{background:#F8F4EE;border:1px solid #E6D9C0}
+.lp-fit h3{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-family:var(--zz-font-serif);font-size:22px}
+.lp-fit.for h3{color:#1E5230}
+.lp-fit.against h3{color:#7A5C1D}
+.lp-fit h3 .lu{width:24px;height:24px}
+.lp-fit ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.lp-fit li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5;color:var(--zz-fg-1)}
+.lp-fit li .lu{flex-shrink:0;width:18px;height:18px;margin-top:2px}
+.lp-fit.for li .lu{color:#3F8A4C}
+.lp-fit.against li .lu{color:#A88840}
+
+/* FAQ da LP — usa <details>/<summary> nativos */
+.lp-faq{max-width:780px;margin:0 auto}
+.lp-faq-item{border-bottom:1px solid var(--zz-line)}
+.lp-faq-item summary{list-style:none;cursor:pointer}
+.lp-faq-item summary::-webkit-details-marker{display:none}
+.lp-faq-q{padding:22px 0;font-family:var(--zz-font-serif);font-size:18px;color:var(--zz-green);text-align:left;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lp-faq-q .lu{flex-shrink:0;width:20px;height:20px;color:var(--zz-gold);transition:transform .25s}
+.lp-faq-item[open] .lp-faq-q .lu{transform:rotate(45deg)}
+.lp-faq-a p{margin:0 0 22px;font-size:15.5px;line-height:1.65;color:var(--zz-fg-2)}
+.lp-faq-a a{color:var(--zz-gold-600);text-decoration:underline}
+
+/* CTA final */
+.lp-cta-band{background:var(--zz-green-800);color:#fff;padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.lp-cta-band-wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;opacity:.04;pointer-events:none}
+.lp-cta-band h2{font-family:var(--zz-font-serif);font-size:40px;line-height:1.1;margin:0 0 16px;font-weight:500;position:relative;z-index:2}
+.lp-cta-band p{font-size:17px;color:#E8E1CB;margin:0 0 32px;max-width:560px;margin-left:auto;margin-right:auto;position:relative;z-index:2}
+.lp-cta-band .lp-cta-wa{position:relative;z-index:2}
+
+/* Rodapé minimal */
+.lp-footer{background:#fff;border-top:1px solid var(--zz-line);padding:28px 0;text-align:center;color:var(--zz-fg-3);font-size:13px}
+.lp-footer a{color:var(--zz-green);font-weight:500}
+
+/* Mobile */
+@media (max-width:900px){
+  .lp-hero-grid{grid-template-columns:1fr;gap:48px}
+  .lp-hero h1{font-size:38px}
+  .lp-section-head h2{font-size:30px}
+  .lp-steps{grid-template-columns:1fr}
+  .lp-fit-grid{grid-template-columns:1fr}
+  .lp-trust-strip-row{justify-content:flex-start;gap:16px}
+  .lp-trust-item{flex:1 1 calc(50% - 16px);font-size:13px}
+  .lp-cta-band h2{font-size:30px}
+}
