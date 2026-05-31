@@ -112,7 +112,9 @@ function App() {
         <ParaQuem />
         <Services />
         <ComoFunciona />
+        <Garantias />
         <Diferenciais />
+        <Casos />
         <Cotacao />
         <About />
         <FAQ />
