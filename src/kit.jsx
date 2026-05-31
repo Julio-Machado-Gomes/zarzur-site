@@ -96,11 +96,16 @@ function Footer() {
           </div>
           <div className="zzc-foot-col">
             <h5>Soluções</h5>
-            <a href="#">Garantia de Receita</a><a href="#">Linha de Financiamento</a><a href="#">Assessoria Jurídica</a><a href="#">Tribunal Arbitral</a>
+            <a href="/garantidora">Garantidora de Crédito</a>
+            <a href="/compra-garantida">Compra Garantida</a>
+            <a href="/emprestimo">Empréstimo p/ Condomínios</a>
+            <a href="/compra-de-divida">Compra de Dívida Antiga</a>
           </div>
           <div className="zzc-foot-col">
             <h5>A empresa</h5>
-            <a href="#">Sobre a ZARZUR</a><a href="#">Nossos valores</a><a href="#">Trabalhe conosco</a><a href="#">Blog</a>
+            <a href="#sobre">Sobre a ZARZUR</a>
+            <a href="#seguranca">Como garantimos</a>
+            <a href="#casos">Casos reais</a>
           </div>
           <div className="zzc-foot-col">
             <h5>Atendimento</h5>
@@ -108,7 +113,6 @@ function Footer() {
             <a href="tel:+5511978947653">São Paulo · +55 11 97894-7653</a>
             <a href="tel:+5527999734394">Espírito Santo · +55 27 99973-4394</a>
             <a href="#contato">Fale conosco</a>
-            <a href="#">Privacidade</a>
           </div>
         </div>
         <div className="zzc-foot-bottom">
