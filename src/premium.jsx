@@ -211,4 +211,108 @@ function Contato({ onSimulate }) {
   );
 }
 
-Object.assign(window, { ParaQuem, ComoFunciona, Diferenciais, FAQ, Contato });
+/* ✏️ EDITAR: pilares da estrutura jurídica/operacional — adicione/refine conforme o real */
+const GARANTIAS = [
+  ["file-check-2", "Contrato registrado",
+   "Todo repasse é regulado por contrato registrado em cartório, com cláusulas claras de inadimplência da ZARZUR e regras de saída sem multa abusiva."],
+  ["landmark", "Lastro financeiro próprio",
+   "A ZARZUR opera com capital próprio e linha de crédito estruturada — não somos intermediadores. Quem assume o risco somos nós, não o condomínio."],
+  ["wallet", "Conta segregada por condomínio",
+   "A arrecadação de cada condomínio é controlada em conta dedicada. O síndico tem extrato mensal completo, sem mistura de fluxos."],
+  ["scale", "Auditoria jurídica independente",
+   "Operação revisada por advogado externo especializado em direito condominial. Você sabe exatamente como, quando e por quem é cobrado."],
+];
+
+function Garantias() {
+  return (
+    <section className="zzc-section alt" id="seguranca">
+      <div className="zzc-container">
+        <div className="zzc-section-head center">
+          <p className="zzc-eyebrow center">Como garantimos o seu repasse</p>
+          <h2 className="zzc-h2">Garantia não é palavra. É estrutura.</h2>
+          <p className="zzc-lead" style={{ margin: "0 auto" }}>
+            Garantir receita condominial é responsabilidade — e responsabilidade tem que ter lastro,
+            contrato e quem assine embaixo. Veja como a ZARZUR estrutura essa confiança.
+          </p>
+        </div>
+        <div className="zzc-garantias-grid">
+          {GARANTIAS.map(([ic, t, d]) => (
+            <article className="zzc-garantia" key={t}>
+              <div className="zzc-garantia-ico"><Lu name={ic} /></div>
+              <div>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ✏️ EDITAR: cases reais — substitua os placeholders conforme tiver autorização dos condomínios.
+   Mantenha curto (1-2 linhas + número antes/depois). */
+const CASES = [
+  {
+    perfil: "Condomínio residencial · Vitória/ES",
+    unidades: "120 unidades",
+    desafio: "Inadimplência crônica acima de 18%, obra de pintura travada por falta de caixa.",
+    resultado: "100% de repasse no dia 5 + obra concluída em 90 dias.",
+    placeholder: true,
+  },
+  {
+    perfil: "Conjunto comercial · São Paulo/SP",
+    unidades: "8 salas",
+    desafio: "Dívida antiga de R$ 240 mil acumulada por 3 anos, prestes a virar prejuízo definitivo.",
+    resultado: "Recebimento à vista pela ZARZUR + folha de balanço limpa.",
+    placeholder: true,
+  },
+  {
+    perfil: "Condomínio residencial · Grande SP",
+    unidades: "240 unidades",
+    desafio: "Reforma de fachada de R$ 1,8 mi sem aprovação em banco tradicional.",
+    resultado: "Crédito liberado em 7 dias, 48 meses, sem garantia real do condomínio.",
+    placeholder: true,
+  },
+];
+
+function Casos() {
+  return (
+    <section className="zzc-section" id="casos">
+      <div className="zzc-container">
+        <div className="zzc-section-head center">
+          <p className="zzc-eyebrow center">Casos reais</p>
+          <h2 className="zzc-h2">Síndicos que dormem tranquilos.</h2>
+          <p className="zzc-lead" style={{ margin: "0 auto" }}>
+            Operações reais conduzidas pela ZARZUR. Para preservar a privacidade dos
+            condomínios, identificamos por perfil — referências completas sob NDA, mediante reunião.
+          </p>
+        </div>
+        <div className="zzc-cases-grid">
+          {CASES.map((c, i) => (
+            <article className={"zzc-case" + (c.placeholder ? " is-placeholder" : "")} key={i}>
+              {c.placeholder && <span className="zzc-case-flag">EXEMPLO</span>}
+              <header>
+                <h3>{c.perfil}</h3>
+                <span>{c.unidades}</span>
+              </header>
+              <div className="zzc-case-body">
+                <div>
+                  <b>Desafio</b>
+                  <p>{c.desafio}</p>
+                </div>
+                <div>
+                  <b>Resultado</b>
+                  <p>{c.resultado}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { ParaQuem, ComoFunciona, Diferenciais, Garantias, Casos, FAQ, Contato });
