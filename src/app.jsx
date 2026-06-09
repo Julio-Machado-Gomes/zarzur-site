@@ -52,7 +52,11 @@ function ContactModal({ open, onClose }) {
           <>
             <img src={IMG("symbol.svg")} alt="" style={{ width: 44, marginBottom: 16 }} />
             <h3 className="zzc-modal-title">Fale com um especialista</h3>
-            <p className="zzc-modal-sub">Deixe seus dados — retornamos em até um dia útil.</p>
+            <p className="zzc-modal-sub">A forma mais rápida é pelo WhatsApp. Se preferir, deixe seus dados que retornamos.</p>
+            <button type="button" className="zzc-modal-wa" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "modal" })}>
+              <Lu name="message-circle" />Falar agora no WhatsApp
+            </button>
+            <div className="zzc-modal-or"><span>ou deixe seus dados</span></div>
             <form onSubmit={handleSubmit}>
               <input className="zzc-minput" placeholder="Nome completo" required
                 value={nome} onChange={e => setNome(e.target.value)} />
@@ -62,12 +66,11 @@ function ContactModal({ open, onClose }) {
                 value={tel} onChange={e => setTel(e.target.value)} />
               <select className="zzc-minput" value={solucao} onChange={e => setSolucao(e.target.value)}>
                 <option value="" disabled>Solução de interesse</option>
-                <option>Garantia de Receita</option>
-                <option>Linha de Financiamento</option>
-                <option>Assessoria Jurídica</option>
-                <option>Atualização de Convenção</option>
-                <option>Tribunal Arbitral</option>
-                <option>Auditoria Externa</option>
+                <option>Garantidora de Crédito</option>
+                <option>Compra Garantida de Inadimplência</option>
+                <option>Empréstimo para Obras</option>
+                <option>Compra de Dívida Antiga</option>
+                <option>Ainda não sei</option>
               </select>
               <input className="zzc-minput" placeholder="Nome do condomínio (opcional)"
                 value={cond} onChange={e => setCond(e.target.value)} />
@@ -95,7 +98,6 @@ function App() {
   React.useEffect(() => {
     const onScroll = () => {
       setSolid(window.scrollY > 40);
-      document.documentElement.style.setProperty("--coin-rot", (window.scrollY * 0.32) + "deg");
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -109,12 +111,12 @@ function App() {
       <main>
         <Hero onSimulate={openModal} />
         <Trust />
-        <ParaQuem />
+        <IntentRouter />
         <Services />
         <ComoFunciona />
+        <Calculadora />
         <Garantias />
-        <Diferenciais />
-        <Casos />
+        <ParaQuem />
         <Cotacao />
         <About />
         <FAQ />
@@ -123,6 +125,16 @@ function App() {
       </main>
       <Footer />
       <ContactModal open={modal} onClose={() => setModal(false)} />
+      <a
+        className="zzc-wa-float"
+        href={waLink("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.")}
+        target="_blank" rel="noopener"
+        aria-label="Falar no WhatsApp"
+        onClick={() => zzTrack("whatsapp_click", { origem: "botao_flutuante" })}
+      >
+        <Lu name="message-circle" />
+        <span>Fale no WhatsApp</span>
+      </a>
     </>
   );
 }

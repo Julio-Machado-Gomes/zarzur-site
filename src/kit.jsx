@@ -2,6 +2,24 @@
 
 const A = "assets/";
 
+/* WhatsApp principal (ES) + helpers de conversão */
+const WA_NUMBER = "5527999734394";
+function waLink(msg) {
+  const t = msg || "Olá! Vim pelo site da ZARZUR e quero falar com um especialista.";
+  return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t);
+}
+/* dispara evento para GA4 (gtag) e Meta Pixel (fbq) quando configurados */
+function zzTrack(event, params) {
+  try {
+    if (window.gtag) window.gtag("event", event, params || {});
+    if (window.fbq) window.fbq("trackCustom", event, params || {});
+  } catch (e) {}
+}
+function waOpen(msg, evtParams) {
+  zzTrack("whatsapp_click", evtParams || {});
+  window.open(waLink(msg), "_blank", "noopener");
+}
+
 function IMG(name) {
   return A + name;
 }
@@ -49,9 +67,9 @@ function Btn({ variant = "gold", size, icon, children, onClick, href }) {
 const NAV = [
   ["Soluções", "#solucoes"],
   ["Como funciona", "#como-funciona"],
-  ["A ZARZUR", "#diferenciais"],
+  ["Calculadora", "#calculadora"],
+  ["A ZARZUR", "#sobre"],
   ["Dúvidas", "#faq"],
-  ["Contato", "#contato"],
 ];
 
 function Header({ solid, onSimulate }) {
@@ -87,7 +105,7 @@ function Footer() {
         <div className="zzc-foot-grid">
           <div className="zzc-foot-brand">
             <img className="zzc-foot-logo" src={IMG("marca-vertical-white.svg")} alt="ZARZUR" />
-            <p>Soluções financeiras para condomínios — garantia de receita, financiamento de obras, jurídico e auditoria, com atendimento próximo e transparente.</p>
+            <p>Soluções financeiras para condomínios: garantia de receita, antecipação de inadimplência, crédito para obras e compra de dívida — com lastro, contrato e atendimento próximo.</p>
             <div className="zzc-foot-soc">
               {/* ✏️ EDITAR: redes sociais */}
               <a href="https://instagram.com/zarzurgarantidora" target="_blank" rel="noopener" aria-label="Instagram"><img src={IMG("social-icon-3.png")} alt="Instagram" /></a>
@@ -106,7 +124,7 @@ function Footer() {
             <h5>A empresa</h5>
             <a href="#sobre">Sobre a ZARZUR</a>
             <a href="#seguranca">Como garantimos</a>
-            <a href="#casos">Casos reais</a>
+            <a href="#faq">Dúvidas frequentes</a>
           </div>
           <div className="zzc-foot-col">
             <h5>Atendimento</h5>
@@ -117,13 +135,12 @@ function Footer() {
           </div>
         </div>
         <div className="zzc-foot-bottom">
-          {/* ✏️ EDITAR: ano e CNPJ */}
-          <span>© 2025 ZARZUR Soluções Financeiras. Todos os direitos reservados.</span>
-          <span>CNPJ 00.000.000/0001-00</span>
+          <span>© 2026 ZARZUR Soluções Financeiras. Todos os direitos reservados.</span>
+          <span>CNPJ 62.716.775/0001-15</span>
         </div>
       </div>
     </footer>
   );
 }
 
-Object.assign(window, { Lu, Btn, Header, Footer, A, IMG, Coin3D });
+Object.assign(window, { Lu, Btn, Header, Footer, A, IMG, Coin3D, WA_NUMBER, waLink, waOpen, zzTrack });

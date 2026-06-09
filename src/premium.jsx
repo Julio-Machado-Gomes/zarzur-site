@@ -2,9 +2,9 @@
 
 /* ✏️ EDITAR: públicos atendidos */
 const AUDIENCES = [
-  ["user-cog", "Síndicos", "Gestão sem o peso da inadimplência. Receita garantida e respaldo jurídico para você administrar com tranquilidade."],
-  ["building-2", "Administradoras", "Um parceiro financeiro que fortalece a sua carteira de condomínios e agrega serviços de alto valor."],
-  ["users", "Condôminos", "Mais previsibilidade nas contas, valorização do patrimônio e convivência justa, dentro das normas."],
+  ["user-cog", "Síndicos", "Gestão sem o peso da inadimplência. A receita entra no dia certo e a cobrança sai do seu colo."],
+  ["building-2", "Administradoras", "Um parceiro financeiro que fortalece a sua carteira de condomínios e reduz o atrito com os síndicos."],
+  ["users", "Condôminos", "Mais previsibilidade nas contas e valorização do patrimônio, sem rateio extra por causa de quem não paga."],
 ];
 function ParaQuem() {
   return (
@@ -13,7 +13,7 @@ function ParaQuem() {
         <div className="zzc-section-head">
           <p className="zzc-eyebrow">Para quem</p>
           <h2 className="zzc-h2">Feito para quem cuida do condomínio.</h2>
-          <p className="zzc-lead">Estruturamos soluções para os três lados da gestão condominial — sempre com transparência e proximidade.</p>
+          <p className="zzc-lead">Soluções financeiras para os três lados da gestão condominial — com lastro, contrato e atendimento próximo.</p>
         </div>
         <div className="zzc-aud-grid">
           {AUDIENCES.map(([ic, t, d]) => (
@@ -31,9 +31,9 @@ function ParaQuem() {
 
 /* ✏️ EDITAR: passos do processo */
 const STEPS = [
-  ["01", "Diagnóstico", "Analisamos a realidade financeira e jurídica do condomínio, sem compromisso."],
-  ["02", "Proposta sob medida", "Desenhamos a combinação de soluções ideal — garantia, financiamento, jurídico ou auditoria."],
-  ["03", "Acompanhamento", "Implementamos e acompanhamos de perto, com um especialista dedicado ao seu condomínio."],
+  ["01", "Diagnóstico", "Analisamos a arrecadação e a inadimplência do condomínio, sem compromisso."],
+  ["02", "Proposta sob medida", "Desenhamos a solução ideal — garantir a receita, antecipar a inadimplência, financiar a obra ou comprar a dívida antiga."],
+  ["03", "Repasse no dia certo", "Implementamos o contrato e o condomínio passa a receber no dia combinado, com a ZARZUR cuidando da cobrança."],
 ];
 function ComoFunciona() {
   return (
@@ -58,70 +58,39 @@ function ComoFunciona() {
   );
 }
 
-/* ✏️ EDITAR: diferenciais — [ícone-lucide, título, descrição] */
-const DIFF = [
-  ["shield-check", "Receita garantida", "O condomínio recebe em dia, independentemente da inadimplência."],
-  ["scale", "Respaldo jurídico", "Assessoria completa e tribunal arbitral para resolver sem desgaste."],
-  ["handshake", "Atendimento próximo", "Um especialista dedicado, do primeiro contato ao acompanhamento."],
-  ["search-check", "Transparência total", "Auditoria e contas claras, sem letras miúdas."],
-];
-function Diferenciais() {
-  return (
-    <section className="zzc-diff" id="diferenciais">
-      <img className="zzc-diff-wm" src={IMG("symbol.svg")} alt="" />
-      <div className="zzc-container zzc-diff-grid">
-        <div className="zzc-diff-copy">
-          <p className="zzc-eyebrow on-green">Por que ZARZUR</p>
-          <h2>Solidez que se constrói<br/>com o tempo.</h2>
-          {/* ✏️ EDITAR: parágrafo sobre a empresa */}
-          <p>Soluções financeiras desenhadas para transformar a saúde financeira de condomínios em todo o país.</p>
-        </div>
-        <ul className="zzc-diff-list">
-          {DIFF.map(([ic, t, d]) => (
-            <li key={t}>
-              <span className="zzc-diff-ico"><Lu name={ic} /></span>
-              <div><b>{t}</b><span>{d}</span></div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
 /* ✏️ EDITAR: perguntas e respostas do FAQ — adicione quantas quiser */
 const FAQS = [
   [
-    "Como funciona a garantia de receita?",
-    "A ZARZUR assegura o repasse das cotas condominiais ao condomínio mesmo diante de inadimplência, assumindo a cobrança de forma eficaz. O síndico passa a contar com previsibilidade total de caixa.",
+    "A Garantidora é um empréstimo? Vou endividar o condomínio?",
+    "Não. A Garantidora não é dívida e não entra no balanço como passivo. A ZARZUR assume a inadimplência futura e repassa 100% da arrecadação no dia combinado, cobrando uma porcentagem sobre o valor arrecadado. O condomínio não toma crédito nem precisa de aval.",
+  ],
+  [
+    "Quanto custa?",
+    "Na Garantidora, a ZARZUR cobra uma porcentagem sobre a arrecadação mensal, definida após a análise do perfil do condomínio (número de unidades, histórico de inadimplência e valor das cotas). Na Compra Garantida você paga só pelo que precisou ser antecipado. No crédito para obra e na compra de dívida, as condições são apresentadas caso a caso. A análise é gratuita.",
+  ],
+  [
+    "Qual a diferença entre Garantidora e Compra Garantida?",
+    "Na Garantidora, a ZARZUR cobre 100% da inadimplência futura todos os meses — o condomínio recebe cheio, sempre. Na Compra Garantida, a cinco dias do fim do mês a ZARZUR antecipa apenas o que faltou entrar — você fecha o mês completo pagando só pelo uso. A Compra Garantida costuma ser mais barata para quem tem inadimplência baixa ou pontual.",
+  ],
+  [
+    "Como é feita a cobrança ao morador inadimplente?",
+    "A cobrança passa a ser conduzida pela ZARZUR, dentro da lei e de forma respeitosa, sem expor o morador perante o condomínio. O síndico deixa de ter o desgaste de cobrar vizinho e a relação na assembleia melhora.",
   ],
   [
     "O condomínio precisa trocar de administradora?",
-    "Não. Atuamos de forma complementar à administradora atual, agregando soluções financeiras e jurídicas sem interferir na gestão do dia a dia.",
+    "Não. A ZARZUR atua de forma complementar à administradora atual, sem interferir na gestão do dia a dia. Somamos a parte financeira; a rotina administrativa continua com quem já cuida dela.",
   ],
   [
-    "O financiamento de obras tem entrada?",
-    "As linhas são desburocratizadas, com prazos de até 60 meses e condições ajustadas à realidade de cada condomínio. As condições finais são definidas no atendimento.",
+    "Preciso aprovar em assembleia?",
+    "Em geral, sim — a contratação costuma passar pela assembleia. A ZARZUR prepara o material de apresentação com os números do seu condomínio para você levar à reunião e facilitar a aprovação. Fale com um especialista e receba esse material.",
   ],
   [
-    "O tribunal arbitral substitui a Justiça comum?",
-    "A arbitragem resolve conflitos condominiais de forma mais rápida e econômica, com decisão de eficácia equivalente, sem a necessidade de um processo judicial tradicional.",
+    "Qual o valor mínimo e o prazo do crédito para obras?",
+    "O crédito para obras vai de R$ 30 mil a R$ 20 milhões, com prazo de até 60 meses, aprovação em até 7 dias, sem garantia real e sem aval dos condôminos.",
   ],
   [
-    "Qual o valor mínimo para financiamento de obras?",
-    "Nossos financiamentos cobrem projetos a partir de R$ 30 mil, com teto de R$ 20 milhões — faixa ampla para atender desde pequenas reformas até grandes modernizações prediais.",
-  ],
-  [
-    "Em quanto tempo a ZARZUR analisa meu condomínio?",
-    "O diagnóstico inicial é realizado em até 2 dias úteis após a coleta das informações básicas do condomínio. Depois, a proposta personalizada é apresentada em reunião com o síndico ou administradora.",
-  ],
-  [
-    "A ZARZUR atua em quais estados?",
-    "Atualmente temos escritórios em São Paulo e no Espírito Santo, com atendimento presencial e remoto para condomínios nessas regiões. Entre em contato para verificar disponibilidade na sua cidade.",
-  ],
-  [
-    "A auditoria externa pode identificar irregularidades passadas?",
-    "Sim. Nossa auditoria analisa o histórico das contas condominiais, identifica cobranças indevidas, pagamentos duplicados e oportunidades de redução de despesas — independentemente do período investigado.",
+    "A ZARZUR atua em quais regiões?",
+    "Temos atendimento presencial em São Paulo e no Espírito Santo, além de atendimento remoto. Fale com a gente para confirmar a disponibilidade na sua cidade.",
   ],
 ];
 
@@ -177,8 +146,8 @@ function Contato({ onSimulate }) {
         <div className="zzc-contact-intro">
           <p className="zzc-eyebrow on-green">Contato</p>
           <h2>Atendimento próximo,<br/>onde o seu condomínio estiver.</h2>
-          <p>Fale com a ZARZUR em São Paulo ou no Espírito Santo. Ligue, chame no WhatsApp ou solicite que um especialista entre em contato.</p>
-          <Btn variant="gold" icon="arrow-right" onClick={onSimulate}>Solicitar contato</Btn>
+          <p>Fale com a ZARZUR em São Paulo ou no Espírito Santo. Chame no WhatsApp, ligue ou peça que um especialista entre em contato.</p>
+          <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "secao_contato" })}>Falar no WhatsApp</Btn>
         </div>
         <div className="zzc-offices">
           {OFFICES.map(o => (
@@ -251,68 +220,4 @@ function Garantias() {
   );
 }
 
-/* ✏️ EDITAR: cases reais — substitua os placeholders conforme tiver autorização dos condomínios.
-   Mantenha curto (1-2 linhas + número antes/depois). */
-const CASES = [
-  {
-    perfil: "Condomínio residencial · Vitória/ES",
-    unidades: "120 unidades",
-    desafio: "Inadimplência crônica acima de 18%, obra de pintura travada por falta de caixa.",
-    resultado: "100% de repasse no dia 5 + obra concluída em 90 dias.",
-    placeholder: true,
-  },
-  {
-    perfil: "Conjunto comercial · São Paulo/SP",
-    unidades: "8 salas",
-    desafio: "Dívida antiga de R$ 240 mil acumulada por 3 anos, prestes a virar prejuízo definitivo.",
-    resultado: "Recebimento à vista pela ZARZUR + folha de balanço limpa.",
-    placeholder: true,
-  },
-  {
-    perfil: "Condomínio residencial · Grande SP",
-    unidades: "240 unidades",
-    desafio: "Reforma de fachada de R$ 1,8 mi sem aprovação em banco tradicional.",
-    resultado: "Crédito liberado em 7 dias, 48 meses, sem garantia real do condomínio.",
-    placeholder: true,
-  },
-];
-
-function Casos() {
-  return (
-    <section className="zzc-section" id="casos">
-      <div className="zzc-container">
-        <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Casos reais</p>
-          <h2 className="zzc-h2">Síndicos que dormem tranquilos.</h2>
-          <p className="zzc-lead" style={{ margin: "0 auto" }}>
-            Operações reais conduzidas pela ZARZUR. Para preservar a privacidade dos
-            condomínios, identificamos por perfil — referências completas sob NDA, mediante reunião.
-          </p>
-        </div>
-        <div className="zzc-cases-grid">
-          {CASES.map((c, i) => (
-            <article className={"zzc-case" + (c.placeholder ? " is-placeholder" : "")} key={i}>
-              {c.placeholder && <span className="zzc-case-flag">EXEMPLO</span>}
-              <header>
-                <h3>{c.perfil}</h3>
-                <span>{c.unidades}</span>
-              </header>
-              <div className="zzc-case-body">
-                <div>
-                  <b>Desafio</b>
-                  <p>{c.desafio}</p>
-                </div>
-                <div>
-                  <b>Resultado</b>
-                  <p>{c.resultado}</p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-Object.assign(window, { ParaQuem, ComoFunciona, Diferenciais, Garantias, Casos, FAQ, Contato });
+Object.assign(window, { ParaQuem, ComoFunciona, Garantias, FAQ, Contato });

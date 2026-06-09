@@ -147,7 +147,7 @@ img{display:block;max-width:100%}
 button{font-family:inherit}
 a{color:inherit;text-decoration:none}
 
-.zzc-container{max-width:1200px;margin:0 auto;padding:0 32px}
+.zzc-container{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 32px}
 .zzc-eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--zz-gold-600);margin:0 0 14px;display:flex;align-items:center;gap:10px}
 .zzc-eyebrow::before{content:"";width:24px;height:2px;background:var(--zz-gold)}
 .zzc-eyebrow.on-green{color:var(--zz-gold-400)}
@@ -213,13 +213,14 @@ a{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion: reduce){.zzc-seal-glow{animation:none;opacity:.72}}
 
 /* Trust / stats */
-.zzc-trust{background:var(--zz-surface);border-bottom:1px solid var(--zz-border)}
-.zzc-trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:38px 0}
-.zzc-stat{text-align:center;border-right:1px solid var(--zz-border-soft)}
+.zzc-trust{background:var(--zz-surface);border-bottom:1px solid var(--zz-border);position:relative}
+.zzc-trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:56px 0}
+.zzc-stat{text-align:center;border-right:1px solid var(--zz-border-soft);padding:0 12px}
 .zzc-stat:last-child{border-right:none}
-.zzc-stat .num{font-family:var(--zz-font-serif);font-weight:600;font-size:40px;line-height:1;color:var(--zz-green);font-variant-numeric:tabular-nums}
-.zzc-stat .num span{color:var(--zz-gold)}
-.zzc-stat .cap{font-size:13px;color:var(--zz-fg-2);margin-top:8px}
+.zzc-stat .num{font-family:var(--zz-font-serif);font-weight:600;font-size:56px;line-height:1;color:var(--zz-green);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.zzc-stat .num span{color:var(--zz-gold);font-size:.6em;margin-left:2px}
+.zzc-stat .cap{font-size:13.5px;color:var(--zz-fg-2);margin-top:14px;max-width:170px;margin-inline:auto;line-height:1.4}
+.zzc-stat::after{content:"";display:block;width:34px;height:2px;background:var(--zz-gold);opacity:.5;margin:12px auto 0}
 
 /* Section */
 .zzc-section{padding:96px 0}
@@ -434,17 +435,62 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
 .zzc-garantia h3{margin:0 0 8px;font-family:var(--zz-font-serif);font-size:19px;color:var(--zz-green)}
 .zzc-garantia p{margin:0;font-size:14.5px;line-height:1.55;color:var(--zz-fg-2)}
 
-/* Cases grid */
-.zzc-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.zzc-case{position:relative;background:#fff;border:1px solid var(--zz-line);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:18px}
-.zzc-case.is-placeholder{border-style:dashed;border-color:var(--zz-gold-400)}
-.zzc-case-flag{position:absolute;top:14px;right:14px;background:var(--zz-gold);color:#fff;font-size:10px;letter-spacing:.14em;padding:4px 8px;border-radius:6px;font-weight:600}
-.zzc-case header{padding-bottom:14px;border-bottom:1px solid var(--zz-line)}
-.zzc-case header h3{margin:0 0 4px;font-family:var(--zz-font-serif);font-size:18px;color:var(--zz-green)}
-.zzc-case header span{font-size:13px;color:var(--zz-fg-3);letter-spacing:.03em}
-.zzc-case-body{display:flex;flex-direction:column;gap:14px}
-.zzc-case-body b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--zz-gold-600);margin-bottom:4px;font-weight:600}
-.zzc-case-body p{margin:0;font-size:14px;line-height:1.5;color:var(--zz-fg-2)}
+/* ===================================================================
+   ACABAMENTO INSTITUCIONAL + SEÇÕES NOVAS
+   =================================================================== */
+
+/* Fio dourado fino no topo das seções claras (divisor estilo certificado) */
+.zzc-section{position:relative}
+.zzc-section::before,.zzc-intent::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1100px,86%);height:1px;background:linear-gradient(90deg,transparent,rgba(168,136,64,.45),transparent)}
+/* Grão de papel sutil nas seções claras */
+.zzc-section::after,.zzc-intent::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.02;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E")}
+
+/* Roteador de intenção */
+.zzc-intent{position:relative;padding:84px 0;background:var(--zz-surface)}
+.zzc-intent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.zzc-intent-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:var(--zz-paper);border:1px solid var(--zz-border);border-radius:16px;padding:30px 28px;text-decoration:none;transition:transform var(--zz-dur) var(--zz-ease-out),box-shadow var(--zz-dur) var(--zz-ease-out),border-color var(--zz-dur)}
+.zzc-intent-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(6,51,28,.10);border-color:var(--zz-gold-400)}
+.zzc-intent-ico{width:54px;height:54px;border-radius:13px;background:var(--zz-green);color:var(--zz-gold-400);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.zzc-intent-ico .lu{width:26px;height:26px;stroke-width:1.6}
+.zzc-intent-card h3{font-family:var(--zz-font-serif);font-size:20px;color:var(--zz-fg-1);margin:0;line-height:1.2}
+.zzc-intent-card p{font-size:14px;color:var(--zz-fg-2);margin:0;line-height:1.5}
+.zzc-intent-go{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;font-weight:600;color:var(--zz-green);letter-spacing:.02em}
+.zzc-intent-go .lu{width:15px;height:15px;transition:transform var(--zz-dur)}
+.zzc-intent-card:hover .zzc-intent-go{color:var(--zz-gold)}
+.zzc-intent-card:hover .zzc-intent-go .lu{transform:translateX(4px)}
+
+/* Calculadora de inadimplência (seção verde) */
+.zzc-calc{position:relative;overflow:hidden;background:linear-gradient(155deg,#022E19,#044828 72%,#0A5733);color:#fff;padding:96px 0}
+.zzc-calc::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E")}
+.zzc-calc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.zzc-calc-copy h2{font-family:var(--zz-font-serif);font-weight:600;font-size:40px;line-height:1.08;margin:0 0 16px}
+.zzc-calc-copy>p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 30px;max-width:460px}
+.zzc-calc-field{margin-bottom:22px}
+.zzc-calc-field .lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.85)}
+.zzc-calc-field .lbl b{font-family:var(--zz-font-serif);font-size:20px;color:var(--zz-gold-400)}
+.zzc-calc-result{background:rgba(255,255,255,.06);border:1px solid rgba(196,168,106,.32);border-radius:20px;padding:38px 34px;text-align:center;backdrop-filter:blur(4px)}
+.zzc-calc-tag{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--zz-gold-400);margin-bottom:14px}
+.zzc-calc-big{font-family:var(--zz-font-serif);font-weight:600;font-size:60px;line-height:1;color:#fff;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap}
+.zzc-calc-big .cur{font-size:26px;color:var(--zz-gold-400)}
+.zzc-calc-big .per{display:block;width:100%;font-family:var(--zz-font-sans);font-size:14px;font-weight:400;color:rgba(255,255,255,.6);letter-spacing:.04em;margin-top:4px}
+.zzc-calc-sub{display:flex;justify-content:center;gap:40px;margin:24px 0 8px;padding:20px 0;border-top:1px solid rgba(196,168,106,.22);border-bottom:1px solid rgba(196,168,106,.22)}
+.zzc-calc-sub b{display:block;font-family:var(--zz-font-serif);font-size:22px;color:#fff}
+.zzc-calc-sub span{font-size:12.5px;color:rgba(255,255,255,.6)}
+.zzc-calc-note{font-size:14px;line-height:1.55;color:rgba(255,255,255,.82);margin:18px 0 22px}
+.zzc-calc-note b{color:var(--zz-gold-400)}
+.zzc-calc-fine{font-size:11.5px;color:rgba(255,255,255,.5);margin:14px 0 0}
+
+/* Botão flutuante de WhatsApp */
+.zzc-wa-float{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:#1FA855;color:#fff;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 8px 26px rgba(0,0,0,.28);font-weight:600;font-size:14.5px;transition:transform var(--zz-dur) var(--zz-ease-out),box-shadow var(--zz-dur)}
+.zzc-wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.34)}
+.zzc-wa-float .lu{width:22px;height:22px}
+
+/* WhatsApp dentro do modal */
+.zzc-modal-wa{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:#1FA855;color:#fff;border:none;border-radius:9px;padding:14px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:filter var(--zz-dur)}
+.zzc-modal-wa:hover{filter:brightness(1.06)}
+.zzc-modal-wa .lu{width:20px;height:20px}
+.zzc-modal-or{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--zz-fg-3);font-size:12.5px}
+.zzc-modal-or::before,.zzc-modal-or::after{content:"";flex:1;height:1px;background:var(--zz-border)}
 
 /* Mobile */
 @media (max-width:768px){
@@ -452,5 +498,11 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-hero-proof span{border-right:none;padding:0;border-bottom:1px solid rgba(196,168,106,.18);padding-bottom:8px;width:100%}
   .zzc-hero-proof span:last-child{border-bottom:none}
   .zzc-garantias-grid{grid-template-columns:1fr}
-  .zzc-cases-grid{grid-template-columns:1fr}
+  .zzc-intent-grid{grid-template-columns:1fr}
+  .zzc-calc-grid{grid-template-columns:1fr;gap:36px}
+  .zzc-calc-copy h2{font-size:32px}
+  .zzc-calc-big{font-size:48px}
+  .zzc-stat .num{font-size:42px}
+  .zzc-wa-float span{display:none}
+  .zzc-wa-float{padding:15px;right:16px;bottom:16px}
 }
