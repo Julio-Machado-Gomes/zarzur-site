@@ -66,7 +66,7 @@ const FAQS = [
   ],
   [
     "Quanto custa?",
-    "Na Garantidora, a ZARZUR cobra uma porcentagem sobre a arrecadação mensal, definida após a análise do perfil do condomínio (número de unidades, histórico de inadimplência e valor das cotas). Na Compra Garantida você paga só pelo que precisou ser antecipado. No crédito para obra e na compra de dívida, as condições são apresentadas caso a caso. A análise é gratuita.",
+    "Na Garantidora, a ZARZUR cobra uma porcentagem sobre a arrecadação mensal — a partir de 2,5%, definida após a análise do perfil do condomínio (número de unidades, histórico de inadimplência e valor das cotas). Na Compra Garantida você paga só pelo que precisou ser antecipado. No crédito para obra e na compra de dívida, as condições são apresentadas caso a caso. A análise é gratuita.",
   ],
   [
     "Qual a diferença entre Garantidora e Compra Garantida?",
@@ -182,14 +182,14 @@ function Contato({ onSimulate }) {
 
 /* ✏️ EDITAR: pilares da estrutura jurídica/operacional — adicione/refine conforme o real */
 const GARANTIAS = [
-  ["file-check-2", "Contrato registrado",
-   "Todo repasse é regulado por contrato registrado em cartório, com cláusulas claras de inadimplência da ZARZUR e regras de saída sem multa abusiva."],
-  ["landmark", "Lastro financeiro próprio",
-   "A ZARZUR opera com capital próprio e linha de crédito estruturada — não somos intermediadores. Quem assume o risco somos nós, não o condomínio."],
-  ["wallet", "Conta segregada por condomínio",
-   "A arrecadação de cada condomínio é controlada em conta dedicada. O síndico tem extrato mensal completo, sem mistura de fluxos."],
-  ["scale", "Auditoria jurídica independente",
-   "Operação revisada por advogado externo especializado em direito condominial. Você sabe exatamente como, quando e por quem é cobrado."],
+  ["landmark", "Contrato formalizado em banco",
+   "A operação de repasse é contratualizada por meio de instituição bancária — formalidade e rastreabilidade em cada movimento, não um acordo de palavra."],
+  ["wallet", "Capital próprio",
+   "A ZARZUR opera com capital próprio, não como intermediadora. Quem assume o risco da inadimplência é a ZARZUR — nunca o condomínio."],
+  ["file-check-2", "Conta segregada na Garantidora",
+   "Na Garantidora de Crédito, a arrecadação do condomínio é controlada em conta dedicada, sem mistura de fluxos."],
+  ["shield-check", "Não é dívida do condomínio",
+   "A Garantidora não é empréstimo: não vira passivo no balanço nem exige aval dos condôminos. O condomínio apenas recebe."],
 ];
 
 function Garantias() {
@@ -220,4 +220,48 @@ function Garantias() {
   );
 }
 
-Object.assign(window, { ParaQuem, ComoFunciona, Garantias, FAQ, Contato });
+function CasoReal() {
+  return (
+    <section className="zzc-section" id="casos">
+      <div className="zzc-container">
+        <div className="zzc-section-head center">
+          <p className="zzc-eyebrow center">Caso real</p>
+          <h2 className="zzc-h2">Da reforma improvisada à obra que dura.</h2>
+        </div>
+        <article className="zzc-caso">
+          <div className="zzc-caso-main">
+            <div className="zzc-caso-tag"><Lu name="hard-hat" />Empréstimo para obra</div>
+            <h3>Condomínio residencial · Jardim Camburi, Vitória/ES</h3>
+            <p className="zzc-caso-lead">
+              Sem crédito, o condomínio seguiria tapando buracos — reparos pontuais na
+              cobertura, ano após ano, sem resolver o problema de fato.
+            </p>
+            <div className="zzc-caso-steps">
+              <div>
+                <b>Antes</b>
+                <p>Manutenções pontuais e recorrentes na cobertura, sem fôlego de caixa para uma solução definitiva.</p>
+              </div>
+              <div>
+                <b>Com a ZARZUR</b>
+                <p>Crédito liberado para modernizar todo o sistema de impermeabilização da cobertura.</p>
+              </div>
+              <div>
+                <b>Resultado</b>
+                <p>Vida útil do sistema ampliada, manutenções futuras viabilizadas e mais conforto térmico para os apartamentos do último andar.</p>
+              </div>
+            </div>
+          </div>
+          <aside className="zzc-caso-aside">
+            <Lu name="building-2" />
+            <p className="zzc-caso-quote">Uma obra estrutural resolvida de uma vez — em vez de remendo todo ano.</p>
+            <a className="zzc-caso-cta" href={waLink("Olá! Vi o caso de Jardim Camburi no site e quero crédito para uma obra no meu condomínio.")} target="_blank" rel="noopener" onClick={() => zzTrack("whatsapp_click", { origem: "caso_real" })}>
+              <Lu name="message-circle" />Quero crédito para minha obra
+            </a>
+          </aside>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { ParaQuem, ComoFunciona, Garantias, CasoReal, FAQ, Contato });

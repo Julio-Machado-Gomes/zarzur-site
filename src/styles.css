@@ -492,6 +492,23 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
 .zzc-modal-or{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--zz-fg-3);font-size:12.5px}
 .zzc-modal-or::before,.zzc-modal-or::after{content:"";flex:1;height:1px;background:var(--zz-border)}
 
+/* Caso real (bloco featured) */
+.zzc-caso{display:grid;grid-template-columns:1.55fr .9fr;gap:0;margin-top:48px;border:1px solid var(--zz-border);border-radius:20px;overflow:hidden;box-shadow:0 18px 44px rgba(6,51,28,.08)}
+.zzc-caso-main{padding:42px 44px;background:var(--zz-surface)}
+.zzc-caso-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--zz-gold-600);background:var(--zz-gold-100);padding:7px 13px;border-radius:999px;margin-bottom:18px}
+.zzc-caso-tag .lu{width:15px;height:15px}
+.zzc-caso-main h3{font-family:var(--zz-font-serif);font-size:22px;color:var(--zz-green);margin:0 0 14px;line-height:1.25}
+.zzc-caso-lead{font-size:16px;line-height:1.6;color:var(--zz-fg-2);margin:0 0 28px;max-width:560px}
+.zzc-caso-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.zzc-caso-steps b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--zz-gold-600);margin-bottom:7px;font-weight:600}
+.zzc-caso-steps p{margin:0;font-size:14px;line-height:1.55;color:var(--zz-fg-1)}
+.zzc-caso-aside{background:linear-gradient(160deg,#044828,#022E19);color:#fff;padding:42px 36px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.zzc-caso-aside>.lu{width:38px;height:38px;color:var(--zz-gold-400);opacity:.9;margin-bottom:18px}
+.zzc-caso-quote{font-family:var(--zz-font-serif);font-size:20px;line-height:1.4;color:#fff;margin:0 0 26px}
+.zzc-caso-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--zz-gold);color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;padding:13px 18px;border-radius:9px;transition:filter var(--zz-dur)}
+.zzc-caso-cta:hover{filter:brightness(1.07)}
+.zzc-caso-cta .lu{width:19px;height:19px}
+
 /* Mobile */
 @media (max-width:768px){
   .zzc-hero-proof{flex-direction:column;gap:10px;align-items:flex-start}
@@ -505,4 +522,7 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-stat .num{font-size:42px}
   .zzc-wa-float span{display:none}
   .zzc-wa-float{padding:15px;right:16px;bottom:16px}
+  .zzc-caso{grid-template-columns:1fr}
+  .zzc-caso-main{padding:32px 26px}
+  .zzc-caso-steps{grid-template-columns:1fr;gap:18px}
 }

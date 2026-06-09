@@ -9,7 +9,7 @@ function Hero({ onSimulate }) {
           {/* ✏️ EDITAR: texto do hero */}
           <p className="zzc-eyebrow on-green">Soluções Financeiras para Condomínios</p>
           <h1>O seu condomínio recebe <em>todo mês</em>, no dia certo.</h1>
-          <p>A ZARZUR assume a inadimplência por você — com lastro, contrato registrado e auditoria. O síndico fecha o caixa sem depender de quem pagou ou não.</p>
+          <p>A ZARZUR assume a inadimplência por você — com capital próprio, contrato em banco e conta segregada. O síndico fecha o caixa sem depender de quem pagou ou não.</p>
           <div className="zzc-hero-proof">
             <span><b>+R$ 20 mi</b> garantidos</span>
             <span><b>+50</b> condomínios em operação</span>
@@ -21,8 +21,8 @@ function Hero({ onSimulate }) {
           </div>
           <div className="zzc-hero-tags">
             <span className="zzc-hero-tag"><Lu name="shield-check" />Receita garantida</span>
-            <span className="zzc-hero-tag"><Lu name="file-check" />Contrato registrado</span>
-            <span className="zzc-hero-tag"><Lu name="banknote" />Lastro próprio</span>
+            <span className="zzc-hero-tag"><Lu name="landmark" />Contrato em banco</span>
+            <span className="zzc-hero-tag"><Lu name="banknote" />Capital próprio</span>
           </div>
         </div>
         <div className="zzc-hero-seal" role="img" aria-label="Selo ZARZUR — Soluções Financeiras">

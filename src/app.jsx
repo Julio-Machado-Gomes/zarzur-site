@@ -116,6 +116,7 @@ function App() {
         <ComoFunciona />
         <Calculadora />
         <Garantias />
+        <CasoReal />
         <ParaQuem />
         <Cotacao />
         <About />
