@@ -25,7 +25,22 @@ function Hero({ onSimulate }) {
             <span className="zzc-hero-tag"><Lu name="scale" />Suporte jurídico próprio</span>
           </div>
         </div>
-        <Coin3D size={360} spin={24} />
+        <div className="zzc-hero-products">
+          {[
+            ["hand-coins",  "Garantidora de Crédito",     "100% da arrecadação no dia certo"],
+            ["piggy-bank",  "Empréstimo para Obras",       "R$ 30 k – R$ 20 mi · aprovação em 7 dias"],
+            ["calendar-check","Compra Garantida",          "Antecipação a 5 dias do fim do mês"],
+            ["archive",     "Compra de Dívida Antiga",     "Pagamento à vista, balanço limpo"],
+          ].map(([ic, title, sub]) => (
+            <div className="zzc-hero-prod-card" key={title}>
+              <span className="zzc-hero-prod-ico"><Lu name={ic} /></span>
+              <div>
+                <strong>{title}</strong>
+                <span>{sub}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -55,12 +70,10 @@ function Trust() {
 
 /* ✏️ EDITAR: serviços — [ícone-lucide, título, descrição] */
 const SERVICES = [
-  ["hand-coins", "Garantia de Receita", "Garantia de inadimplência zero, cobrança eficaz e tranquilidade financeira para o síndico focar na gestão."],
-  ["piggy-bank", "Linha de Financiamento", "Financiamento desburocratizado para condomínios: realize obras com prazos de até 60 meses e valorize a sua propriedade."],
-  ["scale", "Assessoria Jurídica", "Assessoria jurídica completa para síndicos e proprietários, reduzindo custos e minimizando riscos em locações e gestão."],
-  ["file-text", "Atualização de Convenção de Condomínio", "Atualização de normas condominiais essenciais, evitando conflitos judiciais e assegurando convivência justa e alinhada às leis."],
-  ["gavel", "Tribunal Arbitral", "Tribunal Arbitral especializado resolve conflitos condominiais rapidamente, com menor custo e sem necessidade de advogado."],
-  ["file-search", "Auditoria de Despesas", "Análise independente das contas de despesa do condomínio para identificar cobranças indevidas, pagamentos duplicados e oportunidades de redução. Escopo restrito a contas de fornecedores — nunca à receita gerida pela ZARZUR."],
+  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado — independentemente de quem pagou. Cobrança dos moradores por conta da ZARZUR.", "/garantidora"],
+  ["piggy-bank", "Empréstimo para Condomínios", "Crédito de R$ 30 mil a R$ 20 milhões para obras. Aprovação em até 7 dias, prazo de até 60 meses, sem garantia real e sem aval dos condôminos.", "/emprestimo"],
+  ["calendar-check", "Compra Garantida de Inadimplência", "A 5 dias do fim do mês, a ZARZUR antecipa tudo que não entrou. Você fecha o caixa sem furo — e paga só pelo que foi necessário.", "/compra-garantida"],
+  ["archive", "Compra de Dívida Antiga", "A ZARZUR compra à vista a inadimplência acumulada do condomínio. O balanço fica limpo e o síndico elimina o passivo de uma vez.", "/compra-de-divida"],
 ];
 function Services() {
   return (
@@ -72,12 +85,13 @@ function Services() {
           <p className="zzc-lead" style={{ margin: "0 auto" }}>Conheça nossos serviços pensados para eliminar a inadimplência e facilitar a administração do seu imóvel.</p>
         </div>
         <div className="zzc-serv-grid">
-          {SERVICES.map(([ic, t, d]) => (
+          {SERVICES.map(([ic, t, d, href]) => (
             <article className="zzc-serv" key={t}>
               <div className="zzc-serv-badge"><Lu name={ic} /></div>
               <div className="zzc-serv-body">
                 <h3>{t}</h3>
                 <p>{d}</p>
+                <a className="zzc-serv-link" href={href}>Saiba mais <Lu name="arrow-right" /></a>
               </div>
             </article>
           ))}
