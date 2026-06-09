@@ -19,6 +19,11 @@ function Hero({ onSimulate }) {
             <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
             <Btn variant="ghost-white" href="#calculadora">Calcular minha perda</Btn>
           </div>
+          <a className="zzc-hero-flag" href="/emprestimo" onClick={() => zzTrack("intent_click", { intent: "emprestimo_hero" })}>
+            <Lu name="unlock" />
+            <span><b>Empréstimo para obras sem garantia real do condomínio</b> — sem hipoteca, sem aval, aprovação em 7 dias.</span>
+            <Lu name="arrow-right" />
+          </a>
           <div className="zzc-hero-tags">
             <span className="zzc-hero-tag"><Lu name="shield-check" />Receita garantida</span>
             <span className="zzc-hero-tag"><Lu name="landmark" />Contrato em banco</span>
