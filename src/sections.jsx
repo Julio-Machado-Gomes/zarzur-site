@@ -22,24 +22,14 @@ function Hero({ onSimulate }) {
           <div className="zzc-hero-tags">
             <span className="zzc-hero-tag"><Lu name="shield-check" />Receita garantida</span>
             <span className="zzc-hero-tag"><Lu name="file-check" />Contrato registrado</span>
-            <span className="zzc-hero-tag"><Lu name="scale" />Suporte jurídico próprio</span>
+            <span className="zzc-hero-tag"><Lu name="banknote" />Lastro próprio</span>
           </div>
         </div>
-        <div className="zzc-hero-products">
-          {[
-            ["hand-coins",  "Garantidora de Crédito",     "100% da arrecadação no dia certo"],
-            ["piggy-bank",  "Empréstimo para Obras",       "R$ 30 k – R$ 20 mi · aprovação em 7 dias"],
-            ["calendar-check","Compra Garantida",          "Antecipação a 5 dias do fim do mês"],
-            ["archive",     "Compra de Dívida Antiga",     "Pagamento à vista, balanço limpo"],
-          ].map(([ic, title, sub]) => (
-            <div className="zzc-hero-prod-card" key={title}>
-              <span className="zzc-hero-prod-ico"><Lu name={ic} /></span>
-              <div>
-                <strong>{title}</strong>
-                <span>{sub}</span>
-              </div>
-            </div>
-          ))}
+        <div className="zzc-hero-seal" role="img" aria-label="Selo ZARZUR — Soluções Financeiras">
+          <span className="zzc-seal-glow" aria-hidden="true"></span>
+          <span className="zzc-seal-ring r2" aria-hidden="true"></span>
+          <span className="zzc-seal-ring r1" aria-hidden="true"></span>
+          <img className="zzc-seal-mark" src={IMG("symbol.svg")} alt="" />
         </div>
       </div>
     </section>

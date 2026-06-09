@@ -189,8 +189,10 @@ a{color:inherit;text-decoration:none}
 
 /* Hero */
 .zzc-hero{position:relative;background:linear-gradient(160deg,#022E19 0%,#044828 70%,#0A5733 100%);color:#fff;overflow:hidden;margin-top:-74px;padding:160px 0 110px}
-.zzc-hero-wm{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:620px;opacity:.06;pointer-events:none}
-.zzc-hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.zzc-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 78% 18%,rgba(196,168,106,.10),transparent 55%),radial-gradient(80% 70% at 0% 100%,rgba(0,0,0,.28),transparent 60%)}
+.zzc-hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.055;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.zzc-hero-wm{position:absolute;left:-160px;top:50%;transform:translateY(-50%);width:560px;opacity:.04;pointer-events:none}
+.zzc-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .zzc-hero h1{font-family:var(--zz-font-serif);font-weight:600;font-size:60px;line-height:1.04;letter-spacing:-.015em;margin:0 0 22px}
 .zzc-hero h1 em{font-style:italic;color:var(--zz-gold-400)}
 .zzc-hero p{font-size:19px;line-height:1.6;color:rgba(255,255,255,.82);max-width:520px;margin:0 0 32px}
@@ -200,15 +202,15 @@ a{color:inherit;text-decoration:none}
 .zzc-hero-tag{display:flex;align-items:center;gap:9px;font-size:14px;color:rgba(255,255,255,.85)}
 .zzc-hero-tag .lu{width:18px;height:18px;color:var(--zz-gold-400)}
 
-/* ===== 3D spinning coin ===== */
-.zzc-coin3d{position:relative;justify-self:center;perspective:1700px}
-.zzc-coin3d-stage{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(-13deg)}
-.zzc-coin3d-inner{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(var(--coin-rot,0deg));will-change:transform}
-.zzc-coin-face{position:absolute;inset:0;border-radius:50%;clip-path:circle(49.5%);backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.zzc-coin-edge{position:absolute;inset:0;transform-style:preserve-3d}
-.zzc-coin-edge span{position:absolute;top:50%;left:50%;transform-origin:center center;background:linear-gradient(#5c4a20,#7a6128 8%,#f4e9bf 50%,#7a6128 92%,#5c4a20);box-shadow:inset -0.6px 0 rgba(60,46,16,.45)}
-.zzc-coin-shadow{position:absolute;left:50%;bottom:-4%;width:72%;height:13%;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(0,0,0,.4),transparent 70%);filter:blur(7px);z-index:-1;pointer-events:none}
-@media (prefers-reduced-motion: reduce){.zzc-coin3d-inner{transform:rotateY(-14deg)}}
+/* ===== Hero cedar seal (selo de cedro) ===== */
+.zzc-hero-seal{position:relative;justify-self:center;align-self:center;width:380px;height:380px;display:grid;place-items:center;margin-top:6px}
+.zzc-seal-glow{position:absolute;width:80%;height:80%;border-radius:50%;background:radial-gradient(circle at 50% 44%,rgba(196,168,106,.55),rgba(196,168,106,.13) 56%,transparent 72%);filter:blur(6px);animation:zzbreath 9s ease-in-out infinite}
+.zzc-seal-ring{position:absolute;border-radius:50%;pointer-events:none}
+.zzc-seal-ring.r1{width:73%;height:73%;border:1px solid rgba(196,168,106,.5)}
+.zzc-seal-ring.r2{width:92%;height:92%;border:1px dashed rgba(196,168,106,.3)}
+.zzc-seal-mark{position:relative;width:53%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.45)) drop-shadow(0 0 16px rgba(196,168,106,.35))}
+@keyframes zzbreath{0%,100%{opacity:.5;transform:scale(.97)}50%{opacity:.85;transform:scale(1.03)}}
+@media (prefers-reduced-motion: reduce){.zzc-seal-glow{animation:none;opacity:.72}}
 
 /* Trust / stats */
 .zzc-trust{background:var(--zz-surface);border-bottom:1px solid var(--zz-border)}
@@ -243,15 +245,6 @@ a{color:inherit;text-decoration:none}
 .zzc-serv-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--zz-green);text-decoration:none;letter-spacing:.02em}
 .zzc-serv-link .lu{width:13px;height:13px}
 .zzc-serv-link:hover{color:var(--zz-gold)}
-
-/* ===== Hero products panel ===== */
-.zzc-hero-products{display:flex;flex-direction:column;gap:14px;justify-self:stretch}
-.zzc-hero-prod-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border:1px solid rgba(196,168,106,.22);border-radius:12px;padding:16px 20px;backdrop-filter:blur(4px)}
-.zzc-hero-prod-card:hover{background:rgba(255,255,255,.11);border-color:rgba(196,168,106,.4);transform:translateX(3px);transition:all .2s ease}
-.zzc-hero-prod-ico{flex:none;width:44px;height:44px;border-radius:50%;background:rgba(196,168,106,.18);display:flex;align-items:center;justify-content:center;color:var(--zz-gold-400)}
-.zzc-hero-prod-ico .lu{width:22px;height:22px;stroke-width:1.6}
-.zzc-hero-prod-card strong{display:block;font-family:var(--zz-font-serif);font-size:14px;color:#fff;font-weight:600;line-height:1.2;margin-bottom:3px}
-.zzc-hero-prod-card span{font-size:12px;color:rgba(232,225,203,.7);line-height:1.3}
 
 /* Simulator */
 .zzc-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -402,7 +395,7 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-nav,.zzc-headcta{display:none}
   .zzc-burger{display:flex}
   .zzc-hero-grid,.zzc-sim-grid{grid-template-columns:1fr;gap:40px}
-  .zzc-coin3d{transform:scale(.74);margin:-40px auto}
+  .zzc-hero-seal{transform:scale(.8);margin:-30px auto 0}
   .zzc-contact-grid{grid-template-columns:1fr;gap:36px}
   .zzc-contact-intro h2{font-size:30px}
   .zzc-quote-row{grid-template-columns:1fr;gap:0}
