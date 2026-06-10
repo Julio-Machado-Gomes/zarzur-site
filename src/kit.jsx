@@ -12,7 +12,10 @@ function waLink(msg) {
 function zzTrack(event, params) {
   try {
     if (window.gtag) window.gtag("event", event, params || {});
-    if (window.fbq) window.fbq("trackCustom", event, params || {});
+    if (window.fbq) {
+      window.fbq("trackCustom", event, params || {});
+      if (event === "whatsapp_click") window.fbq("track", "Lead", params || {});
+    }
   } catch (e) {}
 }
 function waOpen(msg, evtParams) {
