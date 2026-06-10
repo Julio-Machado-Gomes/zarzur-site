@@ -18,7 +18,6 @@ function ParaQuem() {
         <div className="zzc-aud-grid">
           {AUDIENCES.map(([ic, t, d]) => (
             <article className="zzc-aud" key={t}>
-              <div className="zzc-aud-ico"><Lu name={ic} /></div>
               <h3>{t}</h3>
               <p>{d}</p>
             </article>
@@ -204,9 +203,9 @@ function Garantias() {
           </p>
         </div>
         <div className="zzc-garantias-grid">
-          {GARANTIAS.map(([ic, t, d]) => (
+          {GARANTIAS.map(([ic, t, d], i) => (
             <article className="zzc-garantia" key={t}>
-              <div className="zzc-garantia-ico"><Lu name={ic} /></div>
+              <span className="zzc-garantia-idx">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3>{t}</h3>
                 <p>{d}</p>

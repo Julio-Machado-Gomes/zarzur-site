@@ -214,7 +214,6 @@ function IntentRouter() {
         <div className="zzc-intent-grid">
           {INTENTS.map(([ic, t, d, wa]) => (
             <a className="zzc-intent-card" href={waLink(wa)} target="_blank" rel="noopener" key={t} onClick={() => zzTrack("whatsapp_click", { origem: "intent", intent: t })}>
-              <span className="zzc-intent-ico"><Lu name={ic} /></span>
               <h3>{t}</h3>
               <p>{d}</p>
               <span className="zzc-intent-go">Falar agora <Lu name="arrow-right" /></span>
