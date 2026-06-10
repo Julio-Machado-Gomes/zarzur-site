@@ -108,7 +108,7 @@ function Footer() {
         <div className="zzc-foot-grid">
           <div className="zzc-foot-brand">
             <img className="zzc-foot-logo" src={IMG("marca-vertical-white.svg")} alt="ZARZUR" />
-            <p>Soluções financeiras para condomínios: garantia de receita, antecipação de inadimplência, crédito para obras e compra de dívida — com lastro, contrato e atendimento próximo.</p>
+            <p>Soluções financeiras para condomínios: garantia de receita, antecipação de inadimplência, crédito para obras e compra de dívida. Tudo com lastro e contrato por trás.</p>
             <div className="zzc-foot-soc">
               {/* ✏️ EDITAR: redes sociais */}
               <a href="https://instagram.com/zarzurgarantidora" target="_blank" rel="noopener" aria-label="Instagram"><img src={IMG("social-icon-3.png")} alt="Instagram" /></a>

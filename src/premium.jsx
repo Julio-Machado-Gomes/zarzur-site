@@ -13,7 +13,7 @@ function ParaQuem() {
         <div className="zzc-section-head">
           <p className="zzc-eyebrow">Para quem</p>
           <h2 className="zzc-h2">Feito para quem cuida do condomínio.</h2>
-          <p className="zzc-lead">Soluções financeiras para os três lados da gestão condominial — com lastro, contrato e atendimento próximo.</p>
+          <p className="zzc-lead">Soluções financeiras para os três lados da gestão condominial, sempre com lastro e contrato por trás.</p>
         </div>
         <div className="zzc-aud-grid">
           {AUDIENCES.map(([ic, t, d]) => (
@@ -32,7 +32,7 @@ function ParaQuem() {
 /* ✏️ EDITAR: passos do processo */
 const STEPS = [
   ["01", "Diagnóstico", "Analisamos a arrecadação e a inadimplência do condomínio, sem compromisso."],
-  ["02", "Proposta sob medida", "Desenhamos a solução ideal — garantir a receita, antecipar a inadimplência, financiar a obra ou comprar a dívida antiga."],
+  ["02", "Proposta sob medida", "Desenhamos a solução ideal para o seu caso: garantir a receita, antecipar a inadimplência, financiar a obra ou comprar a dívida antiga."],
   ["03", "Repasse no dia certo", "Implementamos o contrato e o condomínio passa a receber no dia combinado, com a ZARZUR cuidando da cobrança."],
 ];
 function ComoFunciona() {
@@ -66,11 +66,11 @@ const FAQS = [
   ],
   [
     "Quanto custa?",
-    "Na Garantidora, a ZARZUR cobra uma porcentagem sobre a arrecadação mensal — a partir de 2,5%, definida após a análise do perfil do condomínio (número de unidades, histórico de inadimplência e valor das cotas). Na Compra Garantida você paga só pelo que precisou ser antecipado. No crédito para obra e na compra de dívida, as condições são apresentadas caso a caso. A análise é gratuita.",
+    "Na Garantidora, a ZARZUR cobra uma porcentagem sobre a arrecadação mensal, a partir de 2,5%. O valor exato sai depois da análise do perfil do condomínio: número de unidades, histórico de inadimplência e valor das cotas. Na Compra Garantida você paga só pelo que precisou ser antecipado. No crédito para obra e na compra de dívida antiga, as condições são apresentadas caso a caso. A análise é gratuita.",
   ],
   [
     "Qual a diferença entre Garantidora e Compra Garantida?",
-    "Na Garantidora, a ZARZUR cobre 100% da inadimplência futura todos os meses — o condomínio recebe cheio, sempre. Na Compra Garantida, a cinco dias do fim do mês a ZARZUR antecipa apenas o que faltou entrar — você fecha o mês completo pagando só pelo uso. A Compra Garantida costuma ser mais barata para quem tem inadimplência baixa ou pontual.",
+    "Na Garantidora, a ZARZUR cobre 100% da inadimplência futura todos os meses, então o condomínio recebe cheio sempre. Na Compra Garantida, a cinco dias do fim do mês a ZARZUR antecipa só o que faltou entrar, e você fecha o mês completo pagando apenas pelo uso. A Compra Garantida costuma sair mais barata para quem tem inadimplência baixa ou pontual.",
   ],
   [
     "Como é feita a cobrança ao morador inadimplente?",
@@ -82,7 +82,7 @@ const FAQS = [
   ],
   [
     "Preciso aprovar em assembleia?",
-    "Em geral, sim — a contratação costuma passar pela assembleia. A ZARZUR prepara o material de apresentação com os números do seu condomínio para você levar à reunião e facilitar a aprovação. Fale com um especialista e receba esse material.",
+    "Em geral, sim. A contratação costuma passar pela assembleia. A ZARZUR prepara o material de apresentação com os números do seu condomínio para você levar à reunião e facilitar a aprovação. Fale com um especialista e receba esse material.",
   ],
   [
     "Qual o valor mínimo e o prazo do crédito para obras?",
@@ -90,7 +90,7 @@ const FAQS = [
   ],
   [
     "A ZARZUR atua em quais regiões?",
-    "Temos atendimento presencial em São Paulo e no Espírito Santo, além de atendimento remoto. Fale com a gente para confirmar a disponibilidade na sua cidade.",
+    "Temos atendimento presencial em São Paulo e no Espírito Santo, além de atendimento remoto. Fale com a ZARZUR para confirmar a disponibilidade na sua cidade.",
   ],
 ];
 
@@ -183,13 +183,13 @@ function Contato({ onSimulate }) {
 /* ✏️ EDITAR: pilares da estrutura jurídica/operacional — adicione/refine conforme o real */
 const GARANTIAS = [
   ["landmark", "Contrato formalizado em banco",
-   "A operação de repasse é contratualizada por meio de instituição bancária — formalidade e rastreabilidade em cada movimento, não um acordo de palavra."],
+   "A operação de repasse é contratualizada por meio de instituição bancária, o que dá formalidade e rastreabilidade a cada movimento."],
   ["wallet", "Capital próprio",
-   "A ZARZUR opera com capital próprio, não como intermediadora. Quem assume o risco da inadimplência é a ZARZUR — nunca o condomínio."],
+   "A ZARZUR opera com capital próprio e assume o risco da inadimplência. Esse risco é nosso, nunca do condomínio."],
   ["file-check-2", "Conta segregada na Garantidora",
    "Na Garantidora de Crédito, a arrecadação do condomínio é controlada em conta dedicada, sem mistura de fluxos."],
   ["shield-check", "Não é dívida do condomínio",
-   "A Garantidora não é empréstimo: não vira passivo no balanço nem exige aval dos condôminos. O condomínio apenas recebe."],
+   "A Garantidora não funciona como empréstimo: não vira passivo no balanço nem exige aval dos condôminos. O condomínio apenas recebe."],
 ];
 
 function Garantias() {
@@ -198,10 +198,9 @@ function Garantias() {
       <div className="zzc-container">
         <div className="zzc-section-head center">
           <p className="zzc-eyebrow center">Como garantimos o seu repasse</p>
-          <h2 className="zzc-h2">Garantia não é palavra. É estrutura.</h2>
+          <h2 className="zzc-h2">A garantia tem estrutura por trás.</h2>
           <p className="zzc-lead" style={{ margin: "0 auto" }}>
-            Garantir receita condominial é responsabilidade — e responsabilidade tem que ter lastro,
-            contrato e quem assine embaixo. Veja como a ZARZUR estrutura essa confiança.
+            Garantir a receita de um condomínio é responsabilidade séria, e responsabilidade precisa de lastro e contrato por trás. Veja como a ZARZUR estrutura essa confiança.
           </p>
         </div>
         <div className="zzc-garantias-grid">
@@ -233,8 +232,7 @@ function CasoReal() {
             <div className="zzc-caso-tag"><Lu name="hard-hat" />Empréstimo para obra</div>
             <h3>Condomínio residencial · Jardim Camburi, Vitória/ES</h3>
             <p className="zzc-caso-lead">
-              Sem crédito, o condomínio seguiria tapando buracos — reparos pontuais na
-              cobertura, ano após ano, sem resolver o problema de fato.
+              Sem crédito, o condomínio continuaria fazendo só reparos pontuais na cobertura, ano após ano, sem nunca resolver o problema de verdade.
             </p>
             <div className="zzc-caso-steps">
               <div>
@@ -253,7 +251,7 @@ function CasoReal() {
           </div>
           <aside className="zzc-caso-aside">
             <Lu name="building-2" />
-            <p className="zzc-caso-quote">Uma obra estrutural resolvida de uma vez — em vez de remendo todo ano.</p>
+            <p className="zzc-caso-quote">A obra que vinha sendo adiada saiu do papel e resolveu o problema de uma vez.</p>
             <a className="zzc-caso-cta" href={waLink("Olá! Vi o caso de Jardim Camburi no site e quero crédito para uma obra no meu condomínio.")} target="_blank" rel="noopener" onClick={() => zzTrack("whatsapp_click", { origem: "caso_real" })}>
               <Lu name="message-circle" />Quero crédito para minha obra
             </a>

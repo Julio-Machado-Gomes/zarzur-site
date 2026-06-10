@@ -7,7 +7,7 @@ function Hero({ onSimulate }) {
       <div className="zzc-container zzc-hero-inner">
         <p className="zzc-hero-eyebrow">Soluções financeiras para condomínios</p>
         <h1 className="zzc-hero-title">O seu condomínio recebe todo mês, <em>no dia certo.</em></h1>
-        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência por você — com capital próprio, contrato em banco e conta segregada. O condomínio fecha o caixa sem depender de quem pagou.</p>
+        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência do seu condomínio e garante a arrecadação no dia combinado. Você fecha o caixa sem depender de quem pagou ou deixou de pagar.</p>
         <div className="zzc-hero-actions">
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
           <a className="zzc-hero-link" href="#calculadora">Calcular minha perda <Lu name="arrow-down" /></a>
@@ -16,7 +16,7 @@ function Hero({ onSimulate }) {
       <div className="zzc-container zzc-hero-note-wrap">
         <a className="zzc-hero-note" href="/emprestimo" onClick={() => zzTrack("intent_click", { intent: "emprestimo_hero" })}>
           <span className="k">Também</span>
-          <span className="t"><b>Empréstimo para obras sem garantia real do condomínio</b> — sem hipoteca, sem aval, aprovação em 7 dias.</span>
+          <span className="t"><b>Empréstimo para obras sem garantia real do condomínio.</b> Sem hipoteca, sem aval, com aprovação em até 7 dias.</span>
           <Lu name="arrow-right" />
         </a>
       </div>
@@ -48,9 +48,9 @@ function Trust() {
 
 /* ✏️ EDITAR: serviços — [ícone-lucide, título, descrição] */
 const SERVICES = [
-  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado — independentemente de quem pagou. Cobrança dos moradores por conta da ZARZUR.", "/garantidora"],
+  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado, não importa quem pagou. A cobrança dos moradores fica por nossa conta.", "/garantidora"],
   ["piggy-bank", "Empréstimo para Condomínios", "Crédito de R$ 30 mil a R$ 20 milhões para obras. Aprovação em até 7 dias, prazo de até 60 meses, sem garantia real e sem aval dos condôminos.", "/emprestimo"],
-  ["calendar-check", "Compra Garantida de Inadimplência", "A 5 dias do fim do mês, a ZARZUR antecipa tudo que não entrou. Você fecha o caixa sem furo — e paga só pelo que foi necessário.", "/compra-garantida"],
+  ["calendar-check", "Compra Garantida de Inadimplência", "A cinco dias do fim do mês, a ZARZUR antecipa tudo que ainda não entrou. Você fecha o caixa completo e paga só pelo que precisou antecipar.", "/compra-garantida"],
   ["archive", "Compra de Dívida Antiga", "A ZARZUR compra à vista a inadimplência acumulada do condomínio. O balanço fica limpo e o síndico elimina o passivo de uma vez.", "/compra-de-divida"],
 ];
 function Services() {
@@ -60,7 +60,7 @@ function Services() {
         <div className="zzc-services-head">
           <p className="zzc-eyebrow">As soluções</p>
           <h2 className="zzc-h2">Quatro caminhos para o condomínio receber sempre.</h2>
-          <p className="zzc-lead">Cada solução resolve um problema específico do caixa. Escolha pela dor do seu condomínio — ou fale com um especialista.</p>
+          <p className="zzc-lead">Cada uma resolve um problema diferente do caixa do condomínio. Veja qual encaixa no seu ou fale com um especialista.</p>
         </div>
         <div className="zzc-serv-grid">
           {SERVICES.map(([ic, t, d, href], i) => (
@@ -119,7 +119,7 @@ function Cotacao() {
         <div className="zzc-sim-copy">
           <p className="zzc-eyebrow">Crédito para obra</p>
           <h2>Diga quanto precisa.<br/>Receba a proposta no WhatsApp.</h2>
-          <p className="zzc-lead">Informe o valor e a finalidade da obra. Um especialista ZARZUR analisa o caso e <b>retorna pelo WhatsApp</b> — sem compromisso e sob medida para o seu condomínio.</p>
+          <p className="zzc-lead">Informe o valor e a finalidade da obra. Um especialista analisa o caso e <b>retorna pelo WhatsApp</b> com uma proposta sob medida, sem compromisso.</p>
           <ul className="zzc-sim-points">
             <li><Lu name="zap" />Aprovação em até 7 dias úteis.</li>
             <li><Lu name="sliders-horizontal" />Sem garantia real e sem aval dos condôminos.</li>
@@ -173,8 +173,8 @@ function About() {
         <p className="zzc-eyebrow center">A ZARZUR</p>
         {/* ✏️ EDITAR: texto sobre a empresa */}
         <h2 className="zzc-h2">Raízes profundas, gestão tranquila.</h2>
-        <p>O cedro do nosso símbolo não cresce rápido — cresce firme. É assim que enxergamos o condomínio: um patrimônio coletivo que se sustenta com previsibilidade financeira, raízes fortes e cuidado de perto.</p>
-        <p>A ZARZUR garante a receita, financia as obras e dá suporte jurídico para que o síndico administre sem o peso da inadimplência — com a transparência e a proximidade de quem trata o seu condomínio como trataria o próprio.</p>
+        <p>O cedro do nosso símbolo cresce devagar e dura gerações. Enxergamos o condomínio do mesmo jeito: um patrimônio que se mantém de pé quando tem previsibilidade no caixa e cuidado de quem entende do assunto.</p>
+        <p>A ZARZUR cuida da parte financeira para o síndico administrar sem o peso da inadimplência. Tratamos o caixa do seu condomínio com o mesmo cuidado que teríamos com o próprio.</p>
         <div className="zzc-about-sign">
           <img src={IMG("symbol.svg")} alt="" />
           <div><b>ZARZUR Soluções Financeiras</b>Solidez que se constrói com o tempo.</div>
@@ -190,7 +190,7 @@ function CtaBand({ onSimulate }) {
       <img className="zzc-cta-wm" src={IMG("symbol.svg")} alt="" />
       <div className="zzc-container">
         <h2>Descubra quanto a inadimplência custa ao seu condomínio.</h2>
-        <p>Receba uma análise gratuita e sem compromisso. Um especialista ZARZUR mostra, em números, quanto o seu condomínio deixa de receber — e como receber 100% no dia certo.</p>
+        <p>Receba uma análise gratuita e sem compromisso. Um especialista mostra, em números, quanto o seu condomínio deixa de receber por ano e como passar a receber tudo no dia certo.</p>
         <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Quero uma análise gratuita da inadimplência do meu condomínio.", { origem: "cta_band" })}>Receber análise gratuita</Btn>
       </div>
     </section>
@@ -273,7 +273,7 @@ function Calculadora() {
             <div><b>R$ {brl0(perdaMes)}</b><span>por mês</span></div>
             <div><b>R$ {brl0(arrecadacao)}</b><span>arrecadação/mês</span></div>
           </div>
-          <p className="zzc-calc-note">Com a Garantidora, o condomínio recebe <b>100% da arrecadação</b> no dia combinado — e a ZARZUR assume a cobrança.</p>
+          <p className="zzc-calc-note">Com a Garantidora, o condomínio recebe <b>100% da arrecadação</b> no dia combinado e a ZARZUR assume a cobrança dos moradores.</p>
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen(msg, { origem: "calculadora", perda_ano: Math.round(perdaAno) })}>Receber análise gratuita</Btn>
           <p className="zzc-calc-fine">Estimativa ilustrativa, baseada nos valores informados. Não constitui proposta.</p>
         </div>
