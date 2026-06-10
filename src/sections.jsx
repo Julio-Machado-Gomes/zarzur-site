@@ -3,39 +3,22 @@
 function Hero({ onSimulate }) {
   return (
     <section className="zzc-hero" id="topo">
-      <img className="zzc-hero-wm" src={IMG("symbol.svg")} alt="" />
-      <div className="zzc-container zzc-hero-grid">
-        <div>
-          {/* ✏️ EDITAR: texto do hero */}
-          <p className="zzc-eyebrow on-green">Soluções Financeiras para Condomínios</p>
-          <h1>O seu condomínio recebe <em>todo mês</em>, no dia certo.</h1>
-          <p>A ZARZUR assume a inadimplência por você — com capital próprio, contrato em banco e conta segregada. O síndico fecha o caixa sem depender de quem pagou ou não.</p>
-          <div className="zzc-hero-proof">
-            <span><b>+R$ 20 mi</b> garantidos</span>
-            <span><b>+50</b> condomínios em operação</span>
-            <span><b>100%</b> de repasse no dia combinado</span>
-          </div>
-          <div className="zzc-hero-cta">
-            <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
-            <Btn variant="ghost-white" href="#calculadora">Calcular minha perda</Btn>
-          </div>
-          <a className="zzc-hero-flag" href="/emprestimo" onClick={() => zzTrack("intent_click", { intent: "emprestimo_hero" })}>
-            <Lu name="unlock" />
-            <span><b>Empréstimo para obras sem garantia real do condomínio</b> — sem hipoteca, sem aval, aprovação em 7 dias.</span>
-            <Lu name="arrow-right" />
-          </a>
-          <div className="zzc-hero-tags">
-            <span className="zzc-hero-tag"><Lu name="shield-check" />Receita garantida</span>
-            <span className="zzc-hero-tag"><Lu name="landmark" />Contrato em banco</span>
-            <span className="zzc-hero-tag"><Lu name="banknote" />Capital próprio</span>
-          </div>
+      <img className="zzc-hero-mark" src={IMG("symbol-white.svg")} alt="" aria-hidden="true" />
+      <div className="zzc-container zzc-hero-inner">
+        <p className="zzc-hero-eyebrow">Soluções financeiras para condomínios</p>
+        <h1 className="zzc-hero-title">O seu condomínio recebe todo mês, <em>no dia certo.</em></h1>
+        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência por você — com capital próprio, contrato em banco e conta segregada. O condomínio fecha o caixa sem depender de quem pagou.</p>
+        <div className="zzc-hero-actions">
+          <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
+          <a className="zzc-hero-link" href="#calculadora">Calcular minha perda <Lu name="arrow-down" /></a>
         </div>
-        <div className="zzc-hero-seal" role="img" aria-label="Selo ZARZUR — Soluções Financeiras">
-          <span className="zzc-seal-glow" aria-hidden="true"></span>
-          <span className="zzc-seal-ring r2" aria-hidden="true"></span>
-          <span className="zzc-seal-ring r1" aria-hidden="true"></span>
-          <img className="zzc-seal-mark" src={IMG("symbol.svg")} alt="" />
-        </div>
+      </div>
+      <div className="zzc-container zzc-hero-note-wrap">
+        <a className="zzc-hero-note" href="/emprestimo" onClick={() => zzTrack("intent_click", { intent: "emprestimo_hero" })}>
+          <span className="k">Também</span>
+          <span className="t"><b>Empréstimo para obras sem garantia real do condomínio</b> — sem hipoteca, sem aval, aprovação em 7 dias.</span>
+          <Lu name="arrow-right" />
+        </a>
       </div>
     </section>
   );
