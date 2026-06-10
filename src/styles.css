@@ -234,22 +234,20 @@ a{color:inherit;text-decoration:none}
 .zzc-section-head.center .zzc-eyebrow{justify-content:center}
 
 /* Services — clean icon-badge layout (matches live site) */
-.zzc-serv-title{font-family:var(--zz-font-serif);font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-.01em;color:var(--zz-fg-1);margin:0 0 18px;text-align:center}
-.zzc-divider{display:flex;align-items:center;justify-content:center;gap:6px;margin:22px auto 26px}
-.zzc-divider i{width:4px;height:4px;border-radius:50%;background:var(--zz-stone-400)}
-.zzc-divider b{width:34px;height:3px;border-radius:3px;background:var(--zz-green);margin-left:4px}
-.zzc-serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 40px}
-.zzc-serv{display:flex;gap:20px;align-items:flex-start;background:none;border:none;border-radius:0;box-shadow:none;overflow:visible}
-.zzc-serv:hover{transform:none;box-shadow:none}
-.zzc-serv-badge{flex:none;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#FFFFFF,#F4F2EC);box-shadow:0 8px 20px rgba(26,29,27,.07),inset 0 0 0 1px rgba(220,216,204,.6);display:flex;align-items:center;justify-content:center;color:var(--zz-green);transition:transform var(--zz-dur) var(--zz-ease-out),box-shadow var(--zz-dur) var(--zz-ease-out)}
-.zzc-serv:hover .zzc-serv-badge{transform:translateY(-3px);box-shadow:0 12px 26px rgba(6,51,28,.12),inset 0 0 0 1px rgba(166,134,58,.4)}
-.zzc-serv-badge .lu{width:34px;height:34px;stroke-width:1.5}
-.zzc-serv-body{padding-top:4px}
-.zzc-serv-body h3{font-family:var(--zz-font-serif);font-size:23px;font-weight:600;color:var(--zz-fg-1);margin:0 0 12px;line-height:1.2}
-.zzc-serv-body p{font-size:14.5px;line-height:1.6;color:var(--zz-fg-2);margin:0 0 12px}
-.zzc-serv-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--zz-green);text-decoration:none;letter-spacing:.02em}
-.zzc-serv-link .lu{width:13px;height:13px}
-.zzc-serv-link:hover{color:var(--zz-gold)}
+.zzc-services-head{max-width:720px;margin-bottom:8px}
+.zzc-serv-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:60px;border-top:1px solid var(--zz-stone-200)}
+.zzc-serv{display:flex;gap:26px;padding:46px 0;border-bottom:1px solid var(--zz-stone-200);text-decoration:none;color:inherit}
+.zzc-serv:nth-child(2n+1){padding-right:56px;border-right:1px solid var(--zz-stone-200)}
+.zzc-serv:nth-child(2n){padding-left:56px}
+.zzc-serv-idx{font-family:var(--zz-font-serif);font-weight:300;font-size:30px;line-height:1;color:var(--zz-clay);font-variant-numeric:tabular-nums;flex:none;padding-top:5px;transition:color var(--zz-dur)}
+.zzc-serv-body h3{font-family:var(--zz-font-serif);font-weight:400;font-size:25px;line-height:1.16;color:var(--zz-ink);margin:0 0 12px;letter-spacing:-.01em}
+.zzc-serv-body p{font-size:15px;line-height:1.62;color:var(--zz-fg-2);margin:0 0 18px}
+.zzc-serv-link{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--zz-green);letter-spacing:.01em}
+.zzc-serv-link .lu{width:14px;height:14px;transition:transform var(--zz-dur)}
+.zzc-serv:hover .zzc-serv-idx{color:var(--zz-gold)}
+.zzc-serv:hover .zzc-serv-body h3{text-decoration:underline;text-decoration-color:var(--zz-clay);text-underline-offset:4px}
+.zzc-serv:hover .zzc-serv-link{color:var(--zz-green-700)}
+.zzc-serv:hover .zzc-serv-link .lu{transform:translateX(4px)}
 
 /* Simulator */
 .zzc-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -406,8 +404,8 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-contact-grid{grid-template-columns:1fr;gap:36px}
   .zzc-contact-intro h2{font-size:30px}
   .zzc-quote-row{grid-template-columns:1fr;gap:0}
-  .zzc-serv-grid{grid-template-columns:repeat(2,1fr);gap:40px 32px}
-  .zzc-serv-title{font-size:36px}
+  .zzc-serv-grid{grid-template-columns:1fr}
+  .zzc-serv,.zzc-serv:nth-child(2n+1),.zzc-serv:nth-child(2n){padding:34px 0;border-right:none}
   .zzc-aud-grid{grid-template-columns:1fr}
   .zzc-steps{grid-template-columns:1fr;gap:32px}
   .zzc-step-line{display:none}

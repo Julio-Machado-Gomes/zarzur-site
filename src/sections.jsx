@@ -55,23 +55,23 @@ const SERVICES = [
 ];
 function Services() {
   return (
-    <section className="zzc-section" id="solucoes">
+    <section className="zzc-section zzc-services" id="solucoes">
       <div className="zzc-container">
-        <div className="zzc-section-head center">
-          <h2 className="zzc-serv-title">Conheçam Nossos Serviços</h2>
-          <span className="zzc-divider"><i></i><i></i><i></i><b></b></span>
-          <p className="zzc-lead" style={{ margin: "0 auto" }}>Conheça nossos serviços pensados para eliminar a inadimplência e facilitar a administração do seu imóvel.</p>
+        <div className="zzc-services-head">
+          <p className="zzc-eyebrow">As soluções</p>
+          <h2 className="zzc-h2">Quatro caminhos para o condomínio receber sempre.</h2>
+          <p className="zzc-lead">Cada solução resolve um problema específico do caixa. Escolha pela dor do seu condomínio — ou fale com um especialista.</p>
         </div>
         <div className="zzc-serv-grid">
-          {SERVICES.map(([ic, t, d, href]) => (
-            <article className="zzc-serv" key={t}>
-              <div className="zzc-serv-badge"><Lu name={ic} /></div>
+          {SERVICES.map(([ic, t, d, href], i) => (
+            <a className="zzc-serv" href={href} key={t} onClick={() => zzTrack("service_click", { servico: t })}>
+              <span className="zzc-serv-idx">{String(i + 1).padStart(2, "0")}</span>
               <div className="zzc-serv-body">
                 <h3>{t}</h3>
                 <p>{d}</p>
-                <a className="zzc-serv-link" href={href}>Saiba mais <Lu name="arrow-right" /></a>
+                <span className="zzc-serv-link">Saiba mais <Lu name="arrow-right" /></span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
