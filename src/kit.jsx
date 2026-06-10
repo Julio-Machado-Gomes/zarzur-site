@@ -118,10 +118,10 @@ function Footer() {
           </div>
           <div className="zzc-foot-col">
             <h5>Soluções</h5>
-            <a href="/garantidora">Garantidora de Crédito</a>
-            <a href="/compra-garantida">Compra Garantida</a>
-            <a href="/emprestimo">Empréstimo p/ Condomínios</a>
-            <a href="/compra-de-divida">Compra de Dívida Antiga</a>
+            <a href="#solucoes">Garantidora de Crédito</a>
+            <a href="#solucoes">Compra Garantida</a>
+            <a href="#solucoes">Empréstimo p/ Condomínios</a>
+            <a href="#solucoes">Compra de Dívida Antiga</a>
           </div>
           <div className="zzc-foot-col">
             <h5>A empresa</h5>
