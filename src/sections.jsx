@@ -14,7 +14,7 @@ function Hero({ onSimulate }) {
         </div>
       </div>
       <div className="zzc-container zzc-hero-note-wrap">
-        <a className="zzc-hero-note" href={waLink("Olá! Tenho interesse no empréstimo para obras do condomínio, sem garantia real. Quero saber as condições.")} target="_blank" rel="noopener" onClick={() => zzTrack("whatsapp_click", { origem: "hero_emprestimo" })}>
+        <a className="zzc-hero-note" href="/emprestimo" onClick={() => zzTrack("intent_click", { intent: "emprestimo_hero" })}>
           <span className="k">Também</span>
           <span className="t"><b>Empréstimo para obras sem garantia real do condomínio.</b> Sem hipoteca, sem aval, com aprovação em até 7 dias.</span>
           <Lu name="arrow-right" />
@@ -48,10 +48,10 @@ function Trust() {
 
 /* ✏️ EDITAR: serviços — [ícone-lucide, título, descrição] */
 const SERVICES = [
-  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado, não importa quem pagou. A cobrança dos moradores fica por nossa conta.", "Olá! Tenho interesse na Garantidora de Crédito e quero uma análise gratuita do meu condomínio."],
-  ["piggy-bank", "Empréstimo para Condomínios", "Crédito de R$ 30 mil a R$ 20 milhões para obras. Aprovação em até 7 dias, prazo de até 60 meses, sem garantia real e sem aval dos condôminos.", "Olá! Tenho interesse no empréstimo para obras do condomínio e quero saber as condições."],
-  ["calendar-check", "Compra Garantida de Inadimplência", "A cinco dias do fim do mês, a ZARZUR antecipa tudo que ainda não entrou. Você fecha o caixa completo e paga só pelo que precisou antecipar.", "Olá! Tenho interesse na Compra Garantida de Inadimplência e quero uma análise."],
-  ["archive", "Compra de Dívida Antiga", "A ZARZUR compra à vista a inadimplência acumulada do condomínio. O balanço fica limpo e o síndico elimina o passivo de uma vez.", "Olá! Tenho interesse na Compra de Dívida Antiga do condomínio e quero uma proposta."],
+  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado, não importa quem pagou. A cobrança dos moradores fica por nossa conta.", "/garantidora"],
+  ["piggy-bank", "Empréstimo para Condomínios", "Crédito de R$ 30 mil a R$ 20 milhões para obras. Aprovação em até 7 dias, prazo de até 60 meses, sem garantia real e sem aval dos condôminos.", "/emprestimo"],
+  ["calendar-check", "Compra Garantida de Inadimplência", "A cinco dias do fim do mês, a ZARZUR antecipa tudo que ainda não entrou. Você fecha o caixa completo e paga só pelo que precisou antecipar.", "/compra-garantida"],
+  ["archive", "Compra de Dívida Antiga", "A ZARZUR compra à vista a inadimplência acumulada do condomínio. O balanço fica limpo e o síndico elimina o passivo de uma vez.", "/compra-de-divida"],
 ];
 function Services() {
   return (
@@ -63,13 +63,13 @@ function Services() {
           <p className="zzc-lead">Cada uma resolve um problema diferente do caixa do condomínio. Veja qual encaixa no seu ou fale com um especialista.</p>
         </div>
         <div className="zzc-serv-grid">
-          {SERVICES.map(([ic, t, d, wa], i) => (
-            <a className="zzc-serv" href={waLink(wa)} target="_blank" rel="noopener" key={t} onClick={() => zzTrack("whatsapp_click", { origem: "servico", servico: t })}>
+          {SERVICES.map(([ic, t, d, href], i) => (
+            <a className="zzc-serv" href={href} key={t} onClick={() => zzTrack("service_click", { servico: t })}>
               <span className="zzc-serv-idx">{String(i + 1).padStart(2, "0")}</span>
               <div className="zzc-serv-body">
                 <h3>{t}</h3>
                 <p>{d}</p>
-                <span className="zzc-serv-link">Pedir análise <Lu name="arrow-right" /></span>
+                <span className="zzc-serv-link">Saiba mais <Lu name="arrow-right" /></span>
               </div>
             </a>
           ))}
@@ -199,9 +199,9 @@ function CtaBand({ onSimulate }) {
 
 /* Roteador de intenção — leva o síndico direto para a solução da dor dele */
 const INTENTS = [
-  ["shield-check", "Quero garantir a receita", "Receba 100% no dia certo, mesmo com inadimplência.", "Olá! Quero garantir a receita do meu condomínio com a Garantidora. Pode me explicar como funciona?"],
-  ["hard-hat", "Preciso de crédito para obra", "R$ 30 mil a R$ 20 mi, aprovação em 7 dias, sem aval.", "Olá! Preciso de crédito para uma obra no condomínio. Quero saber as condições."],
-  ["eraser", "Tenho dívida acumulada", "Vendemos à vista a inadimplência antiga e limpamos o balanço.", "Olá! O condomínio tem inadimplência antiga acumulada e quero uma proposta de compra dessa dívida."],
+  ["shield-check", "Quero garantir a receita", "Receba 100% no dia certo, mesmo com inadimplência.", "/garantidora"],
+  ["hard-hat", "Preciso de crédito para obra", "R$ 30 mil a R$ 20 mi, aprovação em 7 dias, sem aval.", "/emprestimo"],
+  ["eraser", "Tenho dívida acumulada", "Vendemos à vista a inadimplência antiga e limpamos o balanço.", "/compra-de-divida"],
 ];
 function IntentRouter() {
   return (
@@ -212,11 +212,11 @@ function IntentRouter() {
           <h2 className="zzc-h2">Qual é a dor do seu condomínio hoje?</h2>
         </div>
         <div className="zzc-intent-grid">
-          {INTENTS.map(([ic, t, d, wa]) => (
-            <a className="zzc-intent-card" href={waLink(wa)} target="_blank" rel="noopener" key={t} onClick={() => zzTrack("whatsapp_click", { origem: "intent", intent: t })}>
+          {INTENTS.map(([ic, t, d, href]) => (
+            <a className="zzc-intent-card" href={href} key={t} onClick={() => zzTrack("intent_click", { intent: t })}>
               <h3>{t}</h3>
               <p>{d}</p>
-              <span className="zzc-intent-go">Falar agora <Lu name="arrow-right" /></span>
+              <span className="zzc-intent-go">Ver solução <Lu name="arrow-right" /></span>
             </a>
           ))}
         </div>
