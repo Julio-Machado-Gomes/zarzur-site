@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.zarzurgarantidora.com.br/sitemap.xml
