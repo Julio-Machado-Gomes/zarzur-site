@@ -1,4 +1,5 @@
 /* ZARZUR website kit — primitives, header, footer. */
+import React from "react";
 
 const A = "assets/";
 
@@ -146,4 +147,4 @@ function Footer() {
   );
 }
 
-Object.assign(window, { Lu, Btn, Header, Footer, A, IMG, Coin3D, WA_NUMBER, waLink, waOpen, zzTrack });
+export { A, WA_NUMBER, waLink, zzTrack, waOpen, IMG, Lu, Coin3D, Btn, Header, Footer };

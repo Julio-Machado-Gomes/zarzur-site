@@ -1,4 +1,6 @@
 /* ZARZUR — seções premium adicionais do site institucional */
+import React from "react";
+import { Lu, Btn, IMG, A, waLink, waOpen, zzTrack, WA_NUMBER } from "./kit.jsx";
 
 /* ✏️ EDITAR: públicos atendidos */
 const AUDIENCES = [
@@ -261,4 +263,5 @@ function CasoReal() {
   );
 }
 
-Object.assign(window, { ParaQuem, ComoFunciona, Garantias, CasoReal, FAQ, Contato });
+
+export { ParaQuem, ComoFunciona, FAQ, Contato, Garantias, CasoReal };

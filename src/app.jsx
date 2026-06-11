@@ -1,4 +1,8 @@
 /* ZARZUR website kit — app shell, scroll state, contact modal */
+import React from "react";
+import { Header, Footer, Lu, Btn, IMG, waLink, waOpen, zzTrack } from "./kit.jsx";
+import { Hero, Trust, Services, Cotacao, About, CtaBand, IntentRouter, Calculadora } from "./sections.jsx";
+import { ParaQuem, ComoFunciona, FAQ, Contato, Garantias, CasoReal } from "./premium.jsx";
 
 function ContactModal({ open, onClose }) {
   const [nome, setNome]       = React.useState("");
@@ -140,4 +144,4 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+export default App;

@@ -1,4 +1,6 @@
 /* ZARZUR website kit — page sections */
+import React from "react";
+import { Lu, Btn, IMG, A, waLink, waOpen, zzTrack, WA_NUMBER } from "./kit.jsx";
 
 function Hero({ onSimulate }) {
   return (
@@ -281,4 +283,5 @@ function Calculadora() {
   );
 }
 
-Object.assign(window, { Hero, Trust, Services, IntentRouter, Calculadora, Cotacao, About, CtaBand });
+
+export { Hero, Trust, Services, Cotacao, About, CtaBand, IntentRouter, Calculadora };
