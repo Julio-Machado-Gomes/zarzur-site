@@ -43,6 +43,14 @@ function head({ title, description, canonical, image, jsonld }) {
 <link rel="stylesheet" href="/lp/lp.css">
 <link rel="stylesheet" href="/blog.css">
 ${jsonld ? `<script type="application/ld+json">${jsonld}</script>` : ""}
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-564QP8QNW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-564QP8QNW4');
+</script>
 </head>
 <body>`;
 }
