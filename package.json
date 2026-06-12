@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node prerender.js",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node prerender.js && node scripts/build-blog.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,6 +13,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.5",
     "vite": "^5.4.11"
   }
 }

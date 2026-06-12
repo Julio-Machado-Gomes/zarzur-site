@@ -73,6 +73,7 @@ const NAV = [
   ["Como funciona", "#como-funciona"],
   ["Calculadora", "#calculadora"],
   ["A ZARZUR", "#sobre"],
+  ["Blog", "/blog"],
   ["Dúvidas", "#faq"],
 ];
 
@@ -128,6 +129,7 @@ function Footer() {
             <h5>A empresa</h5>
             <a href="#sobre">Sobre a ZARZUR</a>
             <a href="#seguranca">Como garantimos</a>
+            <a href="/blog">Blog</a>
             <a href="#faq">Dúvidas frequentes</a>
           </div>
           <div className="zzc-foot-col">
