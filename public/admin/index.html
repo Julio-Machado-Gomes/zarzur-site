@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Blog ZARZUR</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root{--g:#044828;--g9:#03190E;--ink:#122019;--paper:#F5F1E8;--clay:#B3A993;--line:#e4e0d4;--muted:#6b6f6a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Schibsted Grotesk",system-ui,sans-serif;color:var(--ink);background:#faf8f2}
+  h1,h2,h3{font-family:Fraunces,serif;font-weight:400}
+  button{font-family:inherit;cursor:pointer}
+  .wrap{max-width:920px;margin:0 auto;padding:24px}
+  /* login */
+  #login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--g9)}
+  #login .box{background:#fff;border-radius:14px;padding:40px;width:100%;max-width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+  #login img{height:40px;margin-bottom:20px}
+  #login h1{font-size:22px;margin:0 0 6px;color:var(--g)}
+  #login p{color:var(--muted);font-size:14px;margin:0 0 22px}
+  input,textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:15px;background:#fff;color:var(--ink)}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(4,72,40,.12)}
+  .btn{background:var(--g);color:var(--paper);border:none;padding:12px 20px;border-radius:8px;font-weight:600;font-size:15px}
+  .btn:hover{background:#03351d}
+  .btn.ghost{background:transparent;color:var(--g);border:1px solid var(--line)}
+  .btn.ghost:hover{background:#f0ede3}
+  .btn.danger{background:#fff;color:#9E3328;border:1px solid #e9c9c4}
+  .btn.danger:hover{background:#fbeeec}
+  .err{color:#9E3328;font-size:13px;margin-top:10px;min-height:16px}
+  /* app */
+  #app{display:none}
+  .topbar{background:var(--g9);color:var(--paper);position:sticky;top:0;z-index:5}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+  .topbar b{font-family:Fraunces,serif;font-weight:400;font-size:18px}
+  .topbar .actions{display:flex;gap:10px}
+  .topbar .btn.ghost{color:var(--paper);border-color:rgba(255,255,255,.3)}
+  .topbar .btn.ghost:hover{background:rgba(255,255,255,.08)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .field{margin-bottom:16px}
+  .post-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .post-item:last-child{border-bottom:none}
+  .post-item .t{font-family:Fraunces,serif;font-size:17px}
+  .post-item .d{font-size:12px;color:var(--muted)}
+  .post-item .row-actions{display:flex;gap:8px;flex:none}
+  .small{padding:7px 12px;font-size:13px;border-radius:7px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .toolbar button{background:#f0ede3;border:1px solid var(--line);border-radius:6px;padding:6px 11px;font-size:13px;font-weight:600;color:var(--ink)}
+  .toolbar button:hover{background:#e7e3d6}
+  textarea#body{min-height:320px;font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.6}
+  .editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .preview{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff;overflow:auto;max-height:560px}
+  .preview h2{font-size:1.3rem;color:var(--g);margin:18px 0 8px}
+  .preview h3{font-size:1.1rem;margin:14px 0 6px}
+  .preview p{line-height:1.6;margin:0 0 12px}
+  .preview img{max-width:100%;border-radius:8px}
+  .preview a{color:var(--g)}
+  .muted{color:var(--muted);font-size:13px}
+  .hide{display:none}
+  .bar{display:flex;gap:10px;align-items:center;margin-top:18px}
+  @media(max-width:760px){.row,.editor-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <div class="box">
+    <img src="/assets/marca-vertical.svg" alt="ZARZUR" onerror="this.style.display='none'">
+    <h1>Blog ZARZUR</h1>
+    <p>Área de publicação</p>
+    <div class="field"><input id="pw" type="password" placeholder="Senha" autocomplete="current-password"></div>
+    <button class="btn" style="width:100%" onclick="doLogin()">Entrar</button>
+    <div class="err" id="loginErr"></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <div class="topbar"><div class="wrap">
+    <b>ZARZUR · Blog</b>
+    <div class="actions">
+      <a class="btn ghost small" href="/blog" target="_blank">Ver blog</a>
+      <button class="btn ghost small" onclick="logout()">Sair</button>
+    </div>
+  </div></div>
+
+  <div class="wrap">
+    <!-- LISTA -->
+    <div id="listView">
+      <div class="bar" style="justify-content:space-between;margin:0 0 18px">
+        <h2 style="margin:0;font-size:24px">Posts</h2>
+        <button class="btn" onclick="newPost()">+ Novo post</button>
+      </div>
+      <div class="card" id="postList"><p class="muted">Carregando…</p></div>
+    </div>
+
+    <!-- EDITOR -->
+    <div id="editView" class="hide">
+      <div class="bar" style="justify-content:space-between;margin:0 0 18px">
+        <h2 id="editTitle" style="margin:0;font-size:24px">Novo post</h2>
+        <button class="btn ghost small" onclick="showList()">← Voltar</button>
+      </div>
+      <div class="card">
+        <div class="field"><label>Título</label><input id="f_title" placeholder="Título do artigo"></div>
+        <div class="field"><label>Descrição (resumo p/ Google e redes)</label><textarea id="f_desc" rows="2" placeholder="1 a 2 frases que resumem o post"></textarea></div>
+        <div class="row">
+          <div class="field"><label>Tags (separadas por vírgula)</label><input id="f_tags" placeholder="inadimplência, síndicos"></div>
+          <div class="field"><label>Data</label><input id="f_date" type="date"></div>
+        </div>
+        <div class="field"><label>Imagem de capa</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input id="f_cover" placeholder="/assets/symbol-gold.svg">
+            <button class="btn ghost small" style="flex:none" onclick="document.getElementById('coverFile').click()">Enviar</button>
+            <input id="coverFile" type="file" accept="image/*" class="hide" onchange="uploadImage(this,'cover')">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <label>Conteúdo</label>
+        <div class="toolbar">
+          <button onclick="wrap('**','**')">Negrito</button>
+          <button onclick="line('## ')">Título</button>
+          <button onclick="line('### ')">Subtítulo</button>
+          <button onclick="line('- ')">Lista</button>
+          <button onclick="wrap('[','](https://)')">Link</button>
+          <button onclick="document.getElementById('bodyFile').click()">＋ Imagem</button>
+          <input id="bodyFile" type="file" accept="image/*" class="hide" onchange="uploadImage(this,'body')">
+        </div>
+        <div class="editor-grid">
+          <textarea id="body" placeholder="Escreva o post aqui. Use a barra acima para formatar." oninput="renderPreview()"></textarea>
+          <div class="preview" id="preview"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <button class="btn" id="saveBtn" onclick="savePost()">Publicar</button>
+        <button class="btn ghost" onclick="showList()">Cancelar</button>
+        <button class="btn danger" id="delBtn" onclick="deletePost()" style="margin-left:auto;display:none">Excluir</button>
+        <span class="muted" id="saveMsg"></span>
+      </div>
+      <p class="muted" style="margin-top:12px">Ao publicar, o site se atualiza sozinho em cerca de 1 minuto.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let PW = sessionStorage.getItem("zz_pw") || "";
+let editingSlug = null, editingSha = null;
+
+async function api(action, data){
+  const r = await fetch("/api/blog", {
+    method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({ action, password: PW, ...(data||{}) })
+  });
+  const j = await r.json().catch(()=>({error:"Resposta inválida do servidor."}));
+  if(!r.ok) throw new Error(j.error || ("Erro "+r.status));
+  return j;
+}
+
+async function doLogin(){
+  PW = document.getElementById("pw").value;
+  const err = document.getElementById("loginErr"); err.textContent = "";
+  try { await api("auth"); sessionStorage.setItem("zz_pw", PW); enterApp(); }
+  catch(e){ err.textContent = e.message; }
+}
+function logout(){ sessionStorage.removeItem("zz_pw"); location.reload(); }
+
+function enterApp(){
+  document.getElementById("login").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  showList();
+}
+async function showList(){
+  document.getElementById("editView").classList.add("hide");
+  document.getElementById("listView").classList.remove("hide");
+  const box = document.getElementById("postList");
+  box.innerHTML = '<p class="muted">Carregando…</p>';
+  try {
+    const { posts } = await api("list");
+    if(!posts.length){ box.innerHTML = '<p class="muted">Nenhum post ainda. Clique em “Novo post”.</p>'; return; }
+    box.innerHTML = posts.map(p => `
+      <div class="post-item">
+        <div><div class="t">${escapeHtml(p.title)}</div><div class="d">${p.date||""} · /blog/${p.slug}</div></div>
+        <div class="row-actions">
+          <button class="btn ghost small" onclick="editPost('${p.slug}')">Editar</button>
+        </div>
+      </div>`).join("");
+  } catch(e){ box.innerHTML = '<p class="err">'+e.message+'</p>'; }
+}
+
+function newPost(){
+  editingSlug = null; editingSha = null;
+  document.getElementById("editTitle").textContent = "Novo post";
+  document.getElementById("saveBtn").textContent = "Publicar";
+  document.getElementById("delBtn").style.display = "none";
+  document.getElementById("f_title").value = "";
+  document.getElementById("f_desc").value = "";
+  document.getElementById("f_tags").value = "";
+  document.getElementById("f_date").value = new Date().toISOString().slice(0,10);
+  document.getElementById("f_cover").value = "/assets/symbol-gold.svg";
+  document.getElementById("body").value = "";
+  renderPreview();
+  swapToEditor();
+}
+
+async function editPost(slug){
+  try {
+    const { raw, sha } = await api("get", { slug });
+    const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+    const fm = m ? m[1] : ""; const bodyMd = m ? m[2].trim() : raw;
+    const g = (k)=> (fm.match(new RegExp(k+':\\s*"?(.*?)"?\\s*$','m'))||[])[1] || "";
+    editingSlug = slug; editingSha = sha;
+    document.getElementById("editTitle").textContent = "Editar post";
+    document.getElementById("saveBtn").textContent = "Atualizar";
+    document.getElementById("delBtn").style.display = "inline-block";
+    document.getElementById("f_title").value = g("title");
+    document.getElementById("f_desc").value = g("description");
+    document.getElementById("f_tags").value = (fm.match(/tags:\s*\[(.*?)\]/)||[])[1]?.replace(/"/g,"")||"";
+    document.getElementById("f_date").value = g("date");
+    document.getElementById("f_cover").value = g("cover");
+    document.getElementById("body").value = bodyMd;
+    renderPreview(); swapToEditor();
+  } catch(e){ alert(e.message); }
+}
+function swapToEditor(){
+  document.getElementById("listView").classList.add("hide");
+  document.getElementById("editView").classList.remove("hide");
+  document.getElementById("saveMsg").textContent = "";
+  window.scrollTo(0,0);
+}
+
+async function savePost(){
+  const msg = document.getElementById("saveMsg"); msg.textContent = "Publicando…";
+  const btn = document.getElementById("saveBtn"); btn.disabled = true;
+  try {
+    const res = await api("save", {
+      slug: editingSlug || undefined,
+      sha: editingSha || undefined,
+      title: val("f_title"), description: val("f_desc"),
+      tags: val("f_tags"), date: val("f_date"), cover: val("f_cover"),
+      markdown: val("body"),
+    });
+    msg.textContent = "Publicado! O site atualiza em ~1 min.";
+    editingSlug = res.slug; editingSha = null;
+    setTimeout(showList, 1200);
+  } catch(e){ msg.textContent = ""; alert("Erro: "+e.message); }
+  finally { btn.disabled = false; }
+}
+
+async function deletePost(){
+  if(!editingSlug) return;
+  if(!confirm("Excluir este post? Esta ação remove o artigo do site.")) return;
+  try { await api("delete", { slug: editingSlug }); alert("Removido. O site atualiza em ~1 min."); showList(); }
+  catch(e){ alert(e.message); }
+}
+
+async function uploadImage(input, target){
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const base64 = String(reader.result).split(",")[1];
+    const ext = (file.name.split(".").pop()||"jpg");
+    try {
+      const { url } = await api("upload", { filename: file.name.replace(/\.[^.]+$/,""), ext, base64 });
+      if(target === "cover"){ document.getElementById("f_cover").value = url; }
+      else { insertAtCursor("\n\n![]("+url+")\n\n"); renderPreview(); }
+    } catch(e){ alert("Erro no upload: "+e.message); }
+    input.value = "";
+  };
+  reader.readAsDataURL(file);
+}
+
+/* helpers de edição */
+function val(id){ return document.getElementById(id).value; }
+function ta(){ return document.getElementById("body"); }
+function insertAtCursor(text){
+  const t = ta(); const s = t.selectionStart, e = t.selectionEnd;
+  t.value = t.value.slice(0,s) + text + t.value.slice(e);
+  t.focus(); t.selectionStart = t.selectionEnd = s + text.length;
+}
+function wrap(a,b){
+  const t = ta(); const s=t.selectionStart,e=t.selectionEnd; const sel=t.value.slice(s,e)||"texto";
+  t.value = t.value.slice(0,s)+a+sel+b+t.value.slice(e);
+  t.focus(); t.selectionStart = s+a.length; t.selectionEnd = s+a.length+sel.length; renderPreview();
+}
+function line(prefix){
+  const t = ta(); const s=t.selectionStart; const before=t.value.slice(0,s); const ls=before.lastIndexOf("\n")+1;
+  t.value = t.value.slice(0,ls)+prefix+t.value.slice(ls); t.focus(); renderPreview();
+}
+function renderPreview(){ document.getElementById("preview").innerHTML = marked.parse(val("body")||""); }
+function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* auto-login se já tem senha na sessão */
+if(PW){ api("auth").then(enterApp).catch(()=>{ sessionStorage.removeItem("zz_pw"); }); }
+document.getElementById("pw").addEventListener("keydown", e=>{ if(e.key==="Enter") doLogin(); });
+</script>
+</body>
+</html>
