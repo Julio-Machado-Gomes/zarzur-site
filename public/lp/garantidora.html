@@ -123,6 +123,64 @@
   </div>
 </section>
 
+<!-- CALCULADORA -->
+<section class="zzc-calc" id="calculadora">
+  <div class="zzc-container zzc-calc-grid">
+    <div class="zzc-calc-copy">
+      <p class="zzc-eyebrow on-green">Calculadora de inadimplência</p>
+      <h2>Quanto o seu condomínio<br>deixa de receber?</h2>
+      <p>Ajuste os números do seu condomínio e veja, na hora, quanto a inadimplência tira do caixa todo ano. Com a Garantidora ZARZUR, esse valor entra integralmente no dia combinado.</p>
+      <div class="zzc-calc-field">
+        <div class="lbl"><span>Unidades no condomínio</span><b id="cv-unidades">60</b></div>
+        <input class="zzc-range" id="cl-unidades" type="range" min="8" max="500" step="1" value="60">
+      </div>
+      <div class="zzc-calc-field">
+        <div class="lbl"><span>Cota mensal média</span><b>R$ <span id="cv-cota">600</span></b></div>
+        <input class="zzc-range" id="cl-cota" type="range" min="150" max="3000" step="10" value="600">
+      </div>
+      <div class="zzc-calc-field">
+        <div class="lbl"><span>Inadimplência atual</span><b><span id="cv-taxa">12</span>%</b></div>
+        <input class="zzc-range" id="cl-taxa" type="range" min="1" max="40" step="1" value="12">
+      </div>
+    </div>
+    <div class="zzc-calc-result">
+      <span class="zzc-calc-tag">Sua perda estimada</span>
+      <div class="zzc-calc-big">
+        <span class="cur">R$</span><span id="cv-ano">51.840</span>
+        <span class="per">por ano</span>
+      </div>
+      <div class="zzc-calc-sub">
+        <div><b>R$ <span id="cv-mes">4.320</span></b><span>por mês</span></div>
+        <div><b>R$ <span id="cv-arr">36.000</span></b><span>arrecadação/mês</span></div>
+      </div>
+      <p class="zzc-calc-note">Com a Garantidora, o condomínio recebe <b>100% da arrecadação</b> no dia combinado e a ZARZUR assume a cobrança dos moradores.</p>
+      <a class="lp-cta-wa" id="cl-wa" href="https://wa.me/5527999734394" target="_blank" rel="noopener" style="margin:6px 0 14px"><i data-lucide="message-circle"></i> Receber análise gratuita</a>
+      <p class="zzc-calc-fine">Estimativa ilustrativa, baseada nos valores informados. Não constitui proposta.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var u=document.getElementById('cl-unidades'), c=document.getElementById('cl-cota'), t=document.getElementById('cl-taxa');
+  if(!u) return;
+  var f=function(n){return Math.round(n).toLocaleString('pt-BR');};
+  function upd(){
+    var un=+u.value, co=+c.value, ta=+t.value;
+    var arr=un*co, mes=arr*ta/100, ano=mes*12;
+    document.getElementById('cv-unidades').textContent=un;
+    document.getElementById('cv-cota').textContent=f(co);
+    document.getElementById('cv-taxa').textContent=ta;
+    document.getElementById('cv-arr').textContent=f(arr);
+    document.getElementById('cv-mes').textContent=f(mes);
+    document.getElementById('cv-ano').textContent=f(ano);
+    var msg="Olá! Simulei no site e meu condomínio deixa de receber cerca de R$ "+f(mes)+" por mês (R$ "+f(ano)+" por ano) com "+ta+"% de inadimplência. Quero uma análise gratuita.";
+    document.getElementById('cl-wa').href="https://wa.me/5527999734394?text="+encodeURIComponent(msg);
+  }
+  [u,c,t].forEach(function(el){el.addEventListener('input',upd);});
+  upd();
+})();
+</script>
+
 <!-- PARA QUEM É / NÃO É -->
 <section class="lp-section alt">
   <div class="zzc-container">
