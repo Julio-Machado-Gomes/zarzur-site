@@ -44,6 +44,8 @@ Mesmo com a melhor gestão, sempre haverá um percentual que atrasa. Para o sín
 
 Na [Garantidora de Crédito](/garantidora), a ZARZUR assume a inadimplência futura e repassa 100% da arrecadação no dia combinado, não importa quem pagou. A cobrança ao morador passa a ser conduzida por nós, dentro da lei. O síndico deixa de cobrar vizinho e o caixa para de oscilar.
 
+Para quem tem inadimplência baixa ou pontual, há ainda a [Compra Garantida de Inadimplência](/compra-garantida): a ZARZUR antecipa apenas o que faltou entrar nos últimos dias do mês e costuma sair mais barata que a Garantidora.
+
 Se o problema é uma dívida antiga já acumulada, o caminho é outro: a [Compra de Dívida Antiga](/compra-de-divida) adquire esse passivo à vista e limpa o balanço de uma vez.
 
 ## Em resumo

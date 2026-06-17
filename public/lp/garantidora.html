@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/lp/lp.css">
 <!-- Google Analytics (GA4) -->
@@ -36,6 +36,112 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-564QP8QNW4');
+</script>
+
+<!-- seo:structured-data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Garantidora de Crédito — ZARZUR",
+      "serviceType": "Garantia de receita condominial",
+      "description": "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado, cobrando uma porcentagem a partir de 2,5% sobre o valor arrecadado.",
+      "url": "https://www.zarzurgarantidora.com.br/garantidora",
+      "provider": {
+        "@type": "FinancialService",
+        "name": "ZARZUR Soluções Financeiras",
+        "url": "https://www.zarzurgarantidora.com.br/",
+        "logo": "https://www.zarzurgarantidora.com.br/assets/marca-horizontal.png"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "State",
+          "name": "Espírito Santo"
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Síndicos e administradoras de condomínio"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.zarzurgarantidora.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Garantidora de Crédito",
+          "item": "https://www.zarzurgarantidora.com.br/garantidora"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A ZARZUR cobre inadimplência que já existe hoje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A Garantidora cobre apenas a inadimplência futura, a partir do início do contrato. Para a inadimplência antiga já acumulada, oferecemos um produto separado, a Compra de Dívida Antiga, que adquire essa carteira à vista."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Precisamos trocar de administradora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A ZARZUR atua em paralelo à administradora atual. A rotina de gestão (assembleias, contratos, fornecedores) segue inalterada. Apenas o fluxo financeiro da arrecadação passa a ser intermediado pela ZARZUR."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o custo da Garantidora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cobramos uma porcentagem sobre a arrecadação mensal, a partir de 2,5%, definida caso a caso conforme o perfil do condomínio (tamanho, histórico de inadimplência, tipo). Em geral, esse custo é menor do que o condomínio perde hoje com inadimplência somada ao tempo que o síndico gasta com cobrança."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se um morador entrar com ação judicial contra a cobrança?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toda cobrança feita pela ZARZUR segue o Código de Defesa do Consumidor e a jurisprudência do STJ sobre cobrança condominial. Caso surja qualquer questionamento, a condução fica por conta da ZARZUR, sem custo adicional ao condomínio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que acontece se a ZARZUR não conseguir cobrar do morador?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O risco é integralmente nosso. O condomínio recebeu o repasse cheio e a relação financeira termina aí. A ZARZUR segue com a cobrança por conta própria, sem repassar o ônus ao condomínio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como saímos do contrato se quisermos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contrato inicial de 12 meses, com renovação automática e rescisão mediante aviso prévio de 90 dias. Todas as cláusulas são apresentadas antes da assinatura, sem letras miúdas."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -269,7 +375,7 @@
 </footer>
 
 <script>
-  lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', function(){ if (window.lucide) lucide.createIcons(); });
   document.querySelectorAll('details.lp-faq-item').forEach(d => {
     d.addEventListener('toggle', () => {
       d.classList.toggle('open', d.open);

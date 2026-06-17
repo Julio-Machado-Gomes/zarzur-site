@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/lp/lp.css">
 <!-- Google Analytics (GA4) -->
@@ -36,6 +36,112 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-564QP8QNW4');
+</script>
+
+<!-- seo:structured-data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Compra de Dívida Antiga — ZARZUR",
+      "serviceType": "Compra de carteira de inadimplência condominial",
+      "description": "A ZARZUR compra à vista a inadimplência acumulada do condomínio, limpando o balanço e eliminando o passivo de uma vez.",
+      "url": "https://www.zarzurgarantidora.com.br/compra-de-divida",
+      "provider": {
+        "@type": "FinancialService",
+        "name": "ZARZUR Soluções Financeiras",
+        "url": "https://www.zarzurgarantidora.com.br/",
+        "logo": "https://www.zarzurgarantidora.com.br/assets/marca-horizontal.png"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "State",
+          "name": "Espírito Santo"
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Síndicos e administradoras de condomínio"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.zarzurgarantidora.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compra de Dívida Antiga",
+          "item": "https://www.zarzurgarantidora.com.br/compra-de-divida"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A ZARZUR paga 100% do valor da dívida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Pagamos um valor proporcional, definido caso a caso conforme a idade da dívida, o perfil dos devedores, o histórico de pagamento e a probabilidade real de recuperação. Esse valor fica claro na proposta, sem surpresas e sem mudanças posteriores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como vocês cobram o morador depois?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Após a cessão, o morador inadimplente passa a ter relação contratual diretamente com a ZARZUR. Conduzimos negociações extrajudiciais, parcelamentos e, quando necessário, ações de execução, sempre dentro dos parâmetros legais de cobrança de dívida condominial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Precisa de aprovação em assembleia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende da convenção do condomínio. Em geral, sim. A cessão de créditos costuma exigir autorização assemblear, e apoiamos o síndico na elaboração da pauta e dos materiais para a assembleia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva da proposta ao pagamento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da aceitação da proposta até o pagamento à vista, em média 15 dias úteis, tempo necessário para o registro do contrato de cessão e a formalização. Se houver assembleia a ser convocada, o cronograma é ajustado conforme o calendário do condomínio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O condomínio precisa avisar os devedores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, é exigência legal (CC, art. 290). A notificação aos devedores faz parte do nosso processo: elaboramos as cartas e cuidamos do envio, mas a assinatura sai da administradora ou do síndico, conforme o caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se o morador disputar a dívida judicialmente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O risco é integralmente da ZARZUR. Após a cessão, a responsabilidade é nossa: conduzimos a cobrança, contratamos advogado e arcamos com as custas. O condomínio recebeu o valor à vista e a relação termina ali."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -202,7 +308,7 @@
 </footer>
 
 <script>
-  lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', function(){ if (window.lucide) lucide.createIcons(); });
   document.querySelectorAll('details.lp-faq-item').forEach(d => {
     d.addEventListener('toggle', () => {
       d.classList.toggle('open', d.open);

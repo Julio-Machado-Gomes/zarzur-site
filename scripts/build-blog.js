@@ -38,7 +38,7 @@ function head({ title, description, canonical, image, jsonld }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/lp/lp.css">
 <link rel="stylesheet" href="/blog.css">
@@ -65,7 +65,7 @@ const topbar = `<header class="lp-topbar"><div class="zzc-container lp-topbar-ro
 const footer = `<footer class="blog-footer"><div class="zzc-container">
 © 2026 ZARZUR Soluções Financeiras · CNPJ 62.716.775/0001-15 · <a href="/">zarzurgarantidora.com.br</a>
 </div></footer>
-<script>lucide.createIcons();</script>
+<script>document.addEventListener('DOMContentLoaded',function(){if(window.lucide)lucide.createIcons();});</script>
 </body></html>`;
 
 // ---- coleta e ordena posts ----
@@ -120,6 +120,37 @@ for (const p of posts) {
 }
 
 // ---- listagem ----
+const listingJsonld = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": `${BASE}/blog`,
+      name: "Blog ZARZUR",
+      description:
+        "Artigos práticos para síndicos e administradoras sobre inadimplência, cobrança, obras e previsibilidade de caixa no condomínio.",
+      url: `${BASE}/blog`,
+      publisher: {
+        "@type": "Organization",
+        name: "ZARZUR Soluções Financeiras",
+        logo: { "@type": "ImageObject", url: `${BASE}/assets/marca-horizontal.png` },
+      },
+      blogPost: posts.map((p) => ({
+        "@type": "BlogPosting",
+        headline: p.title,
+        url: `${BASE}/blog/${p.slug}`,
+        datePublished: p.date,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: `${BASE}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE}/blog` },
+      ],
+    },
+  ],
+});
 const cards = posts
   .map(
     (p) => `<a class="blog-card" href="/blog/${p.slug}">
@@ -137,7 +168,7 @@ const listing =
     description: "Artigos práticos para síndicos e administradoras sobre inadimplência, cobrança, obras e previsibilidade de caixa no condomínio.",
     canonical: `${BASE}/blog`,
     image: `${BASE}/assets/marca-horizontal.png`,
-    jsonld: "",
+    jsonld: listingJsonld,
   }) +
   topbar +
   `<section class="blog-hero"><div class="blog-wrap">

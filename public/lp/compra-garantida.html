@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/lp/lp.css">
 <!-- Google Analytics (GA4) -->
@@ -36,6 +36,112 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-564QP8QNW4');
+</script>
+
+<!-- seo:structured-data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Compra Garantida de Inadimplência — ZARZUR",
+      "serviceType": "Antecipação de inadimplência condominial",
+      "description": "A cinco dias do fechamento do mês, a ZARZUR antecipa ao condomínio tudo o que não entrou. O condomínio fecha o caixa completo e paga apenas pelo que precisou antecipar.",
+      "url": "https://www.zarzurgarantidora.com.br/compra-garantida",
+      "provider": {
+        "@type": "FinancialService",
+        "name": "ZARZUR Soluções Financeiras",
+        "url": "https://www.zarzurgarantidora.com.br/",
+        "logo": "https://www.zarzurgarantidora.com.br/assets/marca-horizontal.png"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "State",
+          "name": "Espírito Santo"
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Síndicos e administradoras de condomínio"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.zarzurgarantidora.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compra Garantida de Inadimplência",
+          "item": "https://www.zarzurgarantidora.com.br/compra-garantida"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "E se em um mês não houver inadimplência?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não há antecipação naquele mês, e portanto não há cobrança da ZARZUR. Esse é justamente o ponto: você só paga pelo serviço quando precisa dele. É o modelo \"pague pelo uso\"."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o custo da Compra Garantida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cobramos um percentual sobre o valor antecipado em cada mês. Como atuamos apenas sobre o que faltou (não sobre toda a arrecadação), o custo final fica significativamente abaixo do modelo de Garantidora cheia para condomínios com inadimplência média."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que a antecipação é a 5 dias do fim do mês?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Esse é o prazo em que já se tem clareza dos boletos pagos e ainda há tempo do condomínio fechar o caixa do mês com tranquilidade. Antes seria precipitado; depois prejudicaria o fechamento contábil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quem cobra o morador inadimplente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ZARZUR. A partir do momento em que antecipamos o valor, o crédito contra o morador passa a ser nosso. Toda a cobrança (boleto adicional, negociação e, se necessário, a via judicial) corre por nossa conta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O síndico precisa fazer algo todo mês?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A análise é feita a partir dos dados de arrecadação que o condomínio compartilha, e nós fazemos o cálculo. O síndico recebe um demonstrativo mensal claro, com o que foi arrecadado e o que foi antecipado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funciona junto com outros produtos da ZARZUR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Condomínios que têm dívida antiga acumulada podem combinar a Compra Garantida (para o presente) com a Compra de Dívida Antiga (para resolver o passivo de uma vez)."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -202,7 +308,7 @@
 </footer>
 
 <script>
-  lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', function(){ if (window.lucide) lucide.createIcons(); });
   document.querySelectorAll('details.lp-faq-item').forEach(d => {
     d.addEventListener('toggle', () => {
       d.classList.toggle('open', d.open);

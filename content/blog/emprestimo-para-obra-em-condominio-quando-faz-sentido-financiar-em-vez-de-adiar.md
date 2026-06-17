@@ -107,7 +107,7 @@ O segredo está em três pontos: obra bem justificada, parcela compatível com o
 
 Com planejamento, o condomínio executa a obra no momento certo, preserva o patrimônio e evita que um problema técnico vire uma crise financeira.  
 
-Se o seu condomínio precisa fazer uma obra e quer entender se o financiamento faz sentido, fale com um especialista da [ZARZUR Garantidora](https://www.zarzurgarantidora.com.br/contato). A análise é gratuita e sem compromisso.
+Se o seu condomínio precisa fazer uma obra e quer entender se o financiamento faz sentido, fale com um especialista da [ZARZUR Garantidora](https://wa.me/5527999734394). A análise é gratuita e sem compromisso.
 
 **Meta description (SEO):** Empréstimo para obra em condomínio: saiba quando financiar é melhor que adiar e como planejar a obra sem pesar no caixa.  
 
