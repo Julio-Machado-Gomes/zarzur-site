@@ -184,7 +184,10 @@
         <a href="https://wa.me/5527999734394?text=Olá!%20Quero%20uma%20proposta%20de%20Garantidora%20de%20Crédito%20para%20o%20meu%20condomínio." class="lp-cta-wa" target="_blank" rel="noopener">
           <i data-lucide="message-circle"></i> Receber proposta no WhatsApp
         </a>
-        <span class="lp-cta-hint">Resposta em até 1 dia útil</span>
+        <a href="tel:+5527999664394" class="lp-cta-tel">
+          <i data-lucide="phone"></i> Ligar
+        </a>
+        <span class="lp-cta-hint">Resposta no mesmo dia · sem compromisso</span>
       </div>
     </div>
     <aside class="lp-hero-card">
@@ -363,15 +366,60 @@
   </div>
 </section>
 
+<!-- FORMULÁRIO DE CAPTURA -->
+<section class="lp-section lp-lead-section" id="contato">
+  <div class="zzc-container">
+    <div class="lp-lead-wrap">
+      <div class="lp-lead-copy">
+        <p class="lp-lead-eyebrow">Análise gratuita</p>
+        <h2>Receba uma análise do seu condomínio</h2>
+        <p>Deixe seu contato e a ZARZUR retorna no mesmo dia útil com uma simulação sob medida — sem compromisso e sem pressão de venda. Prefere agora? Chame no WhatsApp ou ligue.</p>
+        <div class="lp-lead-alt">
+          <a href="https://wa.me/5527999734394?text=Olá!%20Quero%20uma%20análise%20de%20Garantidora%20de%20Crédito%20para%20o%20meu%20condomínio." target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp</a>
+          <a href="tel:+5527999664394"><i data-lucide="phone"></i> (27) 99966-4394</a>
+        </div>
+      </div>
+      <form class="lp-lead-form" id="leadForm" novalidate>
+        <div class="lp-field">
+          <label for="lf-nome">Nome</label>
+          <input id="lf-nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome">
+        </div>
+        <div class="lp-field">
+          <label for="lf-tel">WhatsApp / Telefone</label>
+          <input id="lf-tel" name="telefone" type="tel" autocomplete="tel" required placeholder="(27) 9 9999-9999">
+        </div>
+        <div class="lp-field">
+          <label for="lf-email">E-mail</label>
+          <input id="lf-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+        </div>
+        <div class="lp-field">
+          <label for="lf-cond">Condomínio <span style="text-transform:none;font-weight:400;color:var(--zz-clay)">(opcional)</span></label>
+          <input id="lf-cond" name="condominio" type="text" placeholder="Nome do condomínio">
+        </div>
+        <input type="hidden" name="tipo" value="contato">
+        <input type="hidden" name="solucao" value="Garantidora de Crédito">
+        <button type="submit" class="lp-lead-submit" id="leadBtn">Quero a análise gratuita</button>
+        <p class="lp-lead-msg" id="leadMsg" role="status" aria-live="polite"></p>
+        <p class="lp-lead-note">Seus dados vão direto para a ZARZUR. Sem spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="lp-cta-band">
   <img class="lp-cta-band-wm" src="/assets/symbol-white.svg" alt="">
   <div class="zzc-container">
     <h2>Quer ver quanto custaria para o seu condomínio?</h2>
     <p>Conversa de 15 minutos pelo WhatsApp. Sem compromisso, sem pressão de venda. Você sai sabendo o número.</p>
-    <a href="https://wa.me/5527999734394?text=Olá!%20Quero%20uma%20proposta%20de%20Garantidora%20de%20Crédito%20para%20o%20meu%20condomínio." class="lp-cta-wa" target="_blank" rel="noopener">
-      <i data-lucide="message-circle"></i> Falar com um especialista
-    </a>
+    <div class="lp-cta-band-actions">
+      <a href="https://wa.me/5527999734394?text=Olá!%20Quero%20uma%20proposta%20de%20Garantidora%20de%20Crédito%20para%20o%20meu%20condomínio." class="lp-cta-wa" target="_blank" rel="noopener">
+        <i data-lucide="message-circle"></i> Falar com um especialista
+      </a>
+      <a href="tel:+5527999664394" class="lp-cta-tel">
+        <i data-lucide="phone"></i> Ligar (27) 99966-4394
+      </a>
+    </div>
   </div>
 </section>
 
@@ -398,6 +446,49 @@
       gtag('event', 'whatsapp_click', { origem: location.pathname });
     }
   }, true);
+</script>
+
+<!-- AÇÕES FIXAS (mobile) -->
+<div class="lp-float-actions">
+  <a href="tel:+5527999664394" class="lp-float-btn lp-float-tel"><i data-lucide="phone"></i> Ligar</a>
+  <a href="https://wa.me/5527999734394?text=Olá!%20Quero%20uma%20proposta%20de%20Garantidora%20de%20Crédito%20para%20o%20meu%20condomínio." class="lp-float-btn lp-float-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp</a>
+</div>
+
+<script>
+  (function(){
+    var f = document.getElementById('leadForm');
+    if(!f) return;
+    f.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn = document.getElementById('leadBtn');
+      var msg = document.getElementById('leadMsg');
+      var nome = f.nome.value.trim(), tel = f.telefone.value.trim();
+      if(!nome || !tel){
+        msg.textContent = 'Preencha pelo menos nome e telefone.';
+        msg.className = 'lp-lead-msg err';
+        return;
+      }
+      var data = Object.fromEntries(new FormData(f).entries());
+      btn.disabled = true; btn.textContent = 'Enviando…'; msg.textContent = ''; msg.className = 'lp-lead-msg';
+      try{
+        var r = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if(!r.ok) throw new Error('http');
+        f.reset();
+        msg.textContent = 'Recebido! A ZARZUR entra em contato no mesmo dia útil.';
+        msg.className = 'lp-lead-msg ok';
+        btn.textContent = 'Enviado ✓';
+        if(typeof gtag === 'function'){ gtag('event', 'generate_lead', { origem: location.pathname }); }
+      } catch(err){
+        msg.textContent = 'Não consegui enviar agora. Tente pelo WhatsApp ou ligue, por favor.';
+        msg.className = 'lp-lead-msg err';
+        btn.disabled = false; btn.textContent = 'Quero a análise gratuita';
+      }
+    });
+  })();
 </script>
 </body>
 </html>

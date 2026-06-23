@@ -131,3 +131,51 @@
   .lp-trust-item:nth-child(2n){border-right:none}
   .lp-faq-a p{padding-right:20px}
 }
+
+/* ============================================================
+   Captura de leads — botão Ligar, formulário, ações fixas
+   ============================================================ */
+
+/* Botão Ligar (secundário, contorno claro sobre fundo escuro) */
+.lp-cta-tel{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--zz-paper);border:1.5px solid rgba(245,241,232,.34);padding:15px 24px;border-radius:var(--zz-radius);font-weight:600;font-size:15.5px;transition:border-color .2s,color .2s,transform .15s}
+.lp-cta-tel:hover{border-color:var(--zz-gold-400);color:var(--zz-gold-400);transform:translateY(-2px)}
+.lp-cta-tel .lu{width:19px;height:19px}
+.lp-cta-band-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+
+/* Seção de captura */
+.lp-lead-section{background:var(--zz-surface)}
+.lp-lead-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
+.lp-lead-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--zz-clay);font-weight:600;margin:0 0 16px;display:flex;align-items:center;gap:14px}
+.lp-lead-eyebrow::before{content:"";width:34px;height:1px;background:var(--zz-gold)}
+.lp-lead-copy h2{font-family:var(--zz-font-serif);font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.07;color:var(--zz-ink);margin:0 0 16px;font-weight:400;letter-spacing:-.02em}
+.lp-lead-copy p{font-size:16px;line-height:1.62;color:var(--zz-fg-2);margin:0 0 24px;max-width:44ch}
+.lp-lead-alt{display:flex;gap:12px;flex-wrap:wrap}
+.lp-lead-alt a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--zz-green);border:1px solid var(--zz-stone-200);padding:10px 16px;border-radius:var(--zz-radius);transition:background .2s,border-color .2s}
+.lp-lead-alt a:hover{background:var(--zz-surface-alt);border-color:var(--zz-clay)}
+.lp-lead-alt a .lu{width:16px;height:16px}
+
+.lp-lead-form{background:#fff;border:1px solid var(--zz-border);border-radius:var(--zz-radius-lg);padding:30px}
+.lp-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.lp-field label{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--zz-fg-2)}
+.lp-field input{font-family:inherit;font-size:15px;color:var(--zz-ink);background:var(--zz-surface);border:1px solid var(--zz-stone-200);border-radius:var(--zz-radius);padding:13px 14px;transition:border-color .2s,box-shadow .2s}
+.lp-field input::placeholder{color:var(--zz-clay)}
+.lp-field input:focus{outline:none;border-color:var(--zz-gold);box-shadow:0 0 0 3px rgba(168,136,64,.14)}
+.lp-lead-submit{width:100%;background:var(--zz-gold);color:var(--zz-green-900);border:none;font-family:inherit;font-weight:700;font-size:15.5px;letter-spacing:.01em;padding:16px;border-radius:var(--zz-radius);cursor:pointer;margin-top:4px;transition:background .2s,transform .15s}
+.lp-lead-submit:hover:not(:disabled){background:#8C7032;color:#fff;transform:translateY(-1px)}
+.lp-lead-submit:disabled{opacity:.65;cursor:default}
+.lp-lead-msg{font-size:14px;line-height:1.45;margin:14px 0 0}
+.lp-lead-msg.ok{color:var(--zz-green)}
+.lp-lead-msg.err{color:#B23B3B}
+.lp-lead-note{font-size:12px;color:var(--zz-clay);margin:12px 0 0;text-align:center}
+
+/* Ações fixas no mobile */
+.lp-float-actions{display:none}
+@media(max-width:760px){
+  .lp-lead-wrap{grid-template-columns:1fr;gap:32px}
+  .lp-float-actions{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(3,25,14,.18)}
+  .lp-float-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;font-weight:600;font-size:15px}
+  .lp-float-tel{background:var(--zz-paper);color:var(--zz-green)}
+  .lp-float-wa{background:var(--zz-green);color:var(--zz-paper)}
+  .lp-float-btn .lu{width:18px;height:18px}
+  body{padding-bottom:58px}
+}
