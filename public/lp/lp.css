@@ -16,8 +16,8 @@
 .lp-topbar-wa .lu{width:18px;height:18px}
 
 /* Hero — editorial, ink-green */
-.lp-hero{background:var(--zz-green-900);color:var(--zz-paper);padding:100px 0 104px;position:relative;overflow:hidden}
-.lp-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 120% at 6% 6%,rgba(255,255,255,.045),transparent 58%)}
+.lp-hero{background:linear-gradient(158deg,var(--zz-green-700) 0%,var(--zz-green-900) 62%);color:var(--zz-paper);padding:100px 0 104px;position:relative;overflow:hidden}
+.lp-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 120% at 8% 4%,rgba(255,255,255,.05),transparent 55%),radial-gradient(85% 85% at 94% 96%,rgba(168,136,64,.12),transparent 58%)}
 .lp-hero-wm{position:absolute;right:-12%;top:50%;transform:translateY(-50%);height:120%;width:auto;opacity:.05;pointer-events:none}
 .lp-hero-grid{display:grid;grid-template-columns:1.4fr .82fr;gap:60px;align-items:center;position:relative;z-index:2}
 .lp-hero-eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--zz-clay);font-weight:600;margin:0 0 26px;display:flex;align-items:center;gap:14px}
@@ -179,3 +179,19 @@
   .lp-float-btn .lu{width:18px;height:18px}
   body{padding-bottom:58px}
 }
+
+/* ============================================================
+   Refinos visuais — logo, selo de leitura, profundidade
+   ============================================================ */
+.lp-topbar-logo-link{display:inline-flex;align-items:center;transition:opacity .2s}
+.lp-topbar-logo-link:hover{opacity:.82}
+.lp-topbar-logo{height:30px;width:auto;display:block}
+
+.lp-readtime{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--zz-gold-200);background:rgba(168,136,64,.12);border:1px solid rgba(196,168,106,.34);padding:7px 14px;border-radius:999px;margin:0 0 22px}
+.lp-readtime .lu{width:15px;height:15px;color:var(--zz-gold-400)}
+
+/* Card do hero com leve profundidade (degradê + sombra) */
+.lp-hero-card{background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.012));box-shadow:0 24px 60px rgba(3,25,14,.32);backdrop-filter:blur(2px)}
+
+/* CTA final — degradê mais rico */
+.lp-cta-band{background:linear-gradient(150deg,var(--zz-green-600) 0%,var(--zz-green) 42%,var(--zz-green-900) 100%)}
