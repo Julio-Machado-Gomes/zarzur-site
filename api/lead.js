@@ -7,7 +7,7 @@
 //   RESEND_API_KEY  →  chave gerada em resend.com
 // ─────────────────────────────────────────────────────────────
 
-const DESTINO = ["contaro@zarzurgarantidora.com.br", "julio@mgpericias.com.br"];
+const DESTINO = ["contato@zarzurgarantidora.com.br", "julio@mgpericias.com.br"];
 const REMETENTE = "ZARZUR Site <noreply@zarzurgarantidora.com.br>";
 
 export default async function handler(req, res) {
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: REMETENTE,
-        to: [DESTINO],
+        to: DESTINO,
         reply_to: body.email || undefined,
         subject: assunto,
         html,
