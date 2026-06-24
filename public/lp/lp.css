@@ -195,3 +195,35 @@
 
 /* CTA final — degradê mais rico */
 .lp-cta-band{background:linear-gradient(150deg,var(--zz-green-600) 0%,var(--zz-green) 42%,var(--zz-green-900) 100%)}
+
+/* ============================================================
+   Hero com foto + faixa de números + selo no topbar
+   ============================================================ */
+.lp-topbar-left{display:flex;align-items:center;gap:14px;min-width:0}
+.lp-topbar .lp-readtime{margin:0;padding:6px 12px;font-size:11.5px}
+@media(max-width:620px){.lp-topbar .lp-readtime{display:none}}
+
+/* Hero: foto domina a lateral direita, sangra e funde no verde */
+.lp-hero--photo{position:relative;overflow:hidden}
+.lp-hero--photo .lp-hero-grid{display:block}
+.lp-hero--photo .lp-hero-content{max-width:560px;position:relative;z-index:3}
+.lp-hero-photo{position:absolute;top:0;right:0;bottom:0;height:100%;width:46%;object-fit:cover;object-position:42% 20%;z-index:1}
+.lp-hero--photo::after{content:"";position:absolute;top:0;right:0;bottom:0;width:52%;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--zz-green-900) 0%,rgba(3,25,14,.82) 14%,rgba(3,25,14,.32) 36%,transparent 62%)}
+
+/* Faixa de números (ex-card "o que está incluso") */
+.lp-stats{background:var(--zz-surface);border-bottom:1px solid var(--zz-border)}
+.lp-stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.lp-stat{padding:44px 30px;border-right:1px solid var(--zz-stone-100)}
+.lp-stat:last-child{border-right:none}
+.lp-stat b{display:block;font-family:var(--zz-font-serif);font-size:46px;font-weight:300;color:var(--zz-ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1;margin-bottom:10px}
+.lp-stat span{font-size:13.5px;color:var(--zz-fg-2);line-height:1.4}
+
+@media(max-width:900px){
+  .lp-hero-photo{position:relative;width:100%;height:300px;object-position:50% 16%;margin-top:36px}
+  .lp-hero--photo::after{display:none}
+  .lp-hero--photo .lp-hero-content{max-width:none}
+  .lp-stats-row{grid-template-columns:1fr 1fr}
+  .lp-stat{border-bottom:1px solid var(--zz-stone-100);padding:32px 24px}
+  .lp-stat:nth-child(2n){border-right:none}
+  .lp-stat b{font-size:40px}
+}
