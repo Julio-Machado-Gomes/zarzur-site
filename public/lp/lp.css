@@ -272,3 +272,19 @@
 .lp-pain-card p{font-size:.95rem;line-height:1.55;color:var(--zz-fg-2);margin:0}
 @media(max-width:920px){.lp-pain-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.lp-pain-grid{grid-template-columns:1fr}}
+
+
+/* "Para quem é" — painel de qualificação */
+.lp-fit-panel{max-width:900px;margin:0 auto;background:var(--zz-surface);border:1px solid var(--zz-border);border-radius:var(--zz-radius-lg);padding:38px 42px}
+.lp-fit-checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+.lp-fit-checklist li{display:flex;gap:14px;align-items:flex-start}
+.lp-fit-checklist i,.lp-fit-checklist svg{flex:none;width:24px;height:24px;color:var(--zz-gold-600);stroke-width:1.7;margin-top:2px}
+.lp-fit-checklist b{display:block;font-family:var(--zz-font-serif);font-size:1.12rem;font-weight:500;color:var(--zz-ink);letter-spacing:-.01em;margin-bottom:3px}
+.lp-fit-checklist span{font-size:.9rem;line-height:1.45;color:var(--zz-fg-2)}
+.lp-fit-foot{margin-top:32px;padding-top:28px;border-top:1px solid var(--zz-border);display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.lp-fit-foot p{margin:0;font-size:1.02rem;color:var(--zz-ink);font-weight:500;max-width:440px}
+@media(max-width:680px){
+  .lp-fit-panel{padding:28px 22px}
+  .lp-fit-checklist{grid-template-columns:1fr;gap:20px}
+  .lp-fit-foot{flex-direction:column;align-items:flex-start}
+}
