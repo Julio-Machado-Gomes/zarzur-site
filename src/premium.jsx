@@ -34,7 +34,7 @@ function ParaQuem() {
 const STEPS = [
   ["01", "Diagnóstico", "Analisamos a arrecadação e a inadimplência do condomínio, sem compromisso."],
   ["02", "Proposta sob medida", "Desenhamos a solução ideal para o seu caso: garantir a receita, antecipar a inadimplência, financiar a obra ou comprar a dívida antiga."],
-  ["03", "Repasse no dia certo", "Implementamos o contrato e o condomínio passa a receber no dia combinado, com a ZARZUR cuidando da cobrança."],
+  ["03", "Depósito antes do vencimento", "Implementamos o contrato e o condomínio passa a receber um dia antes do vencimento (D-1), com a ZARZUR cuidando da cobrança."],
 ];
 function ComoFunciona() {
   return (
@@ -63,7 +63,7 @@ function ComoFunciona() {
 const FAQS = [
   [
     "A Garantidora é um empréstimo? Vou endividar o condomínio?",
-    "Não. A Garantidora não é dívida e não entra no balanço como passivo. A ZARZUR assume a inadimplência futura e repassa 100% da arrecadação no dia combinado, cobrando uma porcentagem sobre o valor arrecadado. O condomínio não toma crédito nem precisa de aval.",
+    "Não. A Garantidora não é dívida e não entra no balanço como passivo. A ZARZUR assume a inadimplência futura e deposita 100% da arrecadação um dia antes do vencimento (D-1), cobrando uma porcentagem sobre o valor arrecadado. O condomínio não toma crédito nem precisa de aval.",
   ],
   [
     "Quanto custa?",
@@ -188,7 +188,7 @@ const GARANTIAS = [
   ["wallet", "Capital próprio",
    "A ZARZUR opera com capital próprio e assume o risco da inadimplência. Esse risco é nosso, nunca do condomínio."],
   ["file-check-2", "Conta segregada na Garantidora",
-   "Na Garantidora de Crédito, a arrecadação do condomínio é controlada em conta dedicada, sem mistura de fluxos."],
+   "Na Garantidora de Condomínio, a arrecadação do condomínio é controlada em conta dedicada, sem mistura de fluxos."],
   ["shield-check", "Não é dívida do condomínio",
    "A Garantidora não funciona como empréstimo: não vira passivo no balanço nem exige aval dos condôminos. O condomínio apenas recebe."],
 ];

@@ -48,7 +48,7 @@ function Coin3D({ size = 340, spin = 22, className = "" }) {
     }} />;
   });
   return (
-    <div className={"zzc-coin3d " + className} style={{ width: size, height: size, "--spin": spin + "s" }} aria-label="Selo ZARZUR — Soluções Financeiras" role="img">
+    <div className={"zzc-coin3d " + className} style={{ width: size, height: size, "--spin": spin + "s" }} aria-label="Selo ZARZUR Soluções Financeiras" role="img">
       <div className="zzc-coin3d-stage">
         <div className="zzc-coin3d-inner">
           <div className="zzc-coin-edge">{segs}</div>
@@ -120,7 +120,7 @@ function Footer() {
           </div>
           <div className="zzc-foot-col">
             <h5>Soluções</h5>
-            <a href="/garantidora">Garantidora de Crédito</a>
+            <a href="/garantidora">Garantidora de Condomínio</a>
             <a href="/compra-garantida">Compra Garantida</a>
             <a href="/emprestimo">Empréstimo p/ Condomínios</a>
             <a href="/compra-de-divida">Compra de Dívida Antiga</a>

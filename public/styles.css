@@ -234,19 +234,20 @@ a{color:inherit;text-decoration:none}
 
 /* Services — clean icon-badge layout (matches live site) */
 .zzc-services-head{max-width:720px;margin-bottom:8px}
-.zzc-serv-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:60px;border-top:1px solid var(--zz-stone-200)}
-.zzc-serv{display:flex;gap:26px;padding:46px 0;border-bottom:1px solid var(--zz-stone-200);text-decoration:none;color:inherit}
-.zzc-serv:nth-child(2n+1){padding-right:56px;border-right:1px solid var(--zz-stone-200)}
-.zzc-serv:nth-child(2n){padding-left:56px}
-.zzc-serv-idx{font-family:var(--zz-font-serif);font-weight:300;font-size:30px;line-height:1;color:var(--zz-clay);font-variant-numeric:tabular-nums;flex:none;padding-top:5px;transition:color var(--zz-dur)}
-.zzc-serv-body h3{font-family:var(--zz-font-serif);font-weight:400;font-size:25px;line-height:1.16;color:var(--zz-ink);margin:0 0 12px;letter-spacing:-.01em}
-.zzc-serv-body p{font-size:15px;line-height:1.62;color:var(--zz-fg-2);margin:0 0 18px}
-.zzc-serv-link{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--zz-green);letter-spacing:.01em}
-.zzc-serv-link .lu{width:14px;height:14px;transition:transform var(--zz-dur)}
-.zzc-serv:hover .zzc-serv-idx{color:var(--zz-gold)}
-.zzc-serv:hover .zzc-serv-body h3{text-decoration:underline;text-decoration-color:var(--zz-clay);text-underline-offset:4px}
+.zzc-serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.zzc-serv{display:flex;flex-direction:column;padding:34px 32px;border:1px solid var(--zz-stone-200);border-radius:var(--zz-radius-lg);background:#fff;box-shadow:0 1px 2px rgba(4,40,24,.04);text-decoration:none;color:inherit;transition:border-color var(--zz-dur),box-shadow var(--zz-dur),transform var(--zz-dur)}
+.zzc-serv:hover{border-color:var(--zz-green);box-shadow:0 16px 38px rgba(4,40,24,.13);transform:translateY(-4px)}
+.zzc-serv-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.zzc-serv-ic{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:var(--zz-green);color:#fff;flex:none;transition:background var(--zz-dur)}
+.zzc-serv-ic .lu{width:24px;height:24px;stroke-width:1.6}
+.zzc-serv-idx{font-family:var(--zz-font-serif);font-weight:300;font-size:34px;line-height:1;color:var(--zz-clay);font-variant-numeric:tabular-nums}
+.zzc-serv h3{font-family:var(--zz-font-serif);font-weight:400;font-size:24px;line-height:1.16;color:var(--zz-ink);margin:0 0 12px;letter-spacing:-.01em}
+.zzc-serv p{font-size:15px;line-height:1.62;color:var(--zz-fg-2);margin:0 0 22px;flex:1}
+.zzc-serv-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--zz-green);letter-spacing:.01em;margin-top:auto}
+.zzc-serv-link .lu{width:16px;height:16px;transition:transform var(--zz-dur)}
+.zzc-serv:hover .zzc-serv-ic{background:var(--zz-gold)}
 .zzc-serv:hover .zzc-serv-link{color:var(--zz-green-700)}
-.zzc-serv:hover .zzc-serv-link .lu{transform:translateX(4px)}
+.zzc-serv:hover .zzc-serv-link .lu{transform:translateX(5px)}
 
 /* Simulator */
 .zzc-sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -408,7 +409,7 @@ textarea.zzc-minput{resize:vertical;line-height:1.5}
   .zzc-contact-intro h2{font-size:30px}
   .zzc-quote-row{grid-template-columns:1fr;gap:0}
   .zzc-serv-grid{grid-template-columns:1fr}
-  .zzc-serv,.zzc-serv:nth-child(2n+1),.zzc-serv:nth-child(2n){padding:34px 0;border-right:none}
+  .zzc-serv{padding:28px 24px}
   .zzc-aud-grid{grid-template-columns:1fr}
   .zzc-aud,.zzc-aud:not(:last-child),.zzc-aud:not(:first-child){padding:30px 0;border-right:none;border-bottom:1px solid var(--zz-stone-200)}
   .zzc-aud:last-child{border-bottom:none}

@@ -70,7 +70,7 @@ function ContactModal({ open, onClose }) {
                 value={tel} onChange={e => setTel(e.target.value)} />
               <select className="zzc-minput" value={solucao} onChange={e => setSolucao(e.target.value)}>
                 <option value="" disabled>Solução de interesse</option>
-                <option>Garantidora de Crédito</option>
+                <option>Garantidora de Condomínio</option>
                 <option>Compra Garantida de Inadimplência</option>
                 <option>Empréstimo para Obras</option>
                 <option>Compra de Dívida Antiga</option>

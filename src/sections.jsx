@@ -9,7 +9,7 @@ function Hero({ onSimulate }) {
       <div className="zzc-container zzc-hero-inner">
         <p className="zzc-hero-eyebrow">Soluções financeiras para condomínios</p>
         <h1 className="zzc-hero-title">O seu condomínio recebe todo mês, <em>no dia certo.</em></h1>
-        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência do seu condomínio e garante a arrecadação no dia combinado. Você fecha o caixa sem depender de quem pagou ou deixou de pagar.</p>
+        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência do seu condomínio e garante a arrecadação antes mesmo de vencer. Você fecha o caixa sem depender de quem pagou ou deixou de pagar.</p>
         <div className="zzc-hero-actions">
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
           <a className="zzc-hero-link" href="#calculadora">Calcular minha perda <Lu name="arrow-down" /></a>
@@ -28,7 +28,7 @@ function Hero({ onSimulate }) {
 
 /* ✏️ EDITAR: números de impacto */
 const STATS = [
-  ["100", "%", "de repasse no dia certo"],
+  ["100", "%", "de repasse antes de vencer"],
   ["+50", "", "condomínios em operação"],
   ["+R$ 20", "mi", "em obras financiadas"],
   ["7", "dias", "para liberar o crédito"],
@@ -50,9 +50,9 @@ function Trust() {
 
 /* ✏️ EDITAR: serviços — [ícone-lucide, título, descrição] */
 const SERVICES = [
-  ["hand-coins", "Garantidora de Crédito", "A ZARZUR assume a inadimplência futura do condomínio e repassa 100% da arrecadação no dia combinado, não importa quem pagou. A cobrança dos moradores fica por nossa conta.", "/garantidora"],
+  ["hand-coins", "Garantidora de Condomínio", "A ZARZUR assume a inadimplência futura do condomínio e deposita 100% da arrecadação um dia antes do vencimento (D-1), não importa quem pagou. A cobrança dos moradores fica por nossa conta.", "/garantidora"],
   ["piggy-bank", "Empréstimo para Condomínios", "Crédito de R$ 30 mil a R$ 20 milhões para obras. Aprovação em até 7 dias, prazo de até 60 meses, sem garantia real e sem aval dos condôminos.", "/emprestimo"],
-  ["calendar-check", "Compra Garantida de Inadimplência", "A cinco dias do fim do mês, a ZARZUR antecipa tudo que ainda não entrou. Você fecha o caixa completo e paga só pelo que precisou antecipar.", "/compra-garantida"],
+  ["calendar-check", "Compra Garantida de Inadimplência", "No fim do mês, a ZARZUR cobre a inadimplência que faltou. Você fecha o caixa completo por uma taxa menor que a da Garantidora.", "/compra-garantida"],
   ["archive", "Compra de Dívida Antiga", "A ZARZUR compra à vista a inadimplência acumulada do condomínio. O balanço fica limpo e o síndico elimina o passivo de uma vez.", "/compra-de-divida"],
 ];
 function Services() {
@@ -67,12 +67,13 @@ function Services() {
         <div className="zzc-serv-grid">
           {SERVICES.map(([ic, t, d, href], i) => (
             <a className="zzc-serv" href={href} key={t} onClick={() => zzTrack("service_click", { servico: t })}>
-              <span className="zzc-serv-idx">{String(i + 1).padStart(2, "0")}</span>
-              <div className="zzc-serv-body">
-                <h3>{t}</h3>
-                <p>{d}</p>
-                <span className="zzc-serv-link">Saiba mais <Lu name="arrow-right" /></span>
+              <div className="zzc-serv-head">
+                <span className="zzc-serv-ic"><Lu name={ic} /></span>
+                <span className="zzc-serv-idx">{String(i + 1).padStart(2, "0")}</span>
               </div>
+              <h3>{t}</h3>
+              <p>{d}</p>
+              <span className="zzc-serv-link">Saiba mais <Lu name="arrow-right" /></span>
             </a>
           ))}
         </div>
@@ -248,7 +249,7 @@ function Calculadora() {
         <div className="zzc-calc-copy">
           <p className="zzc-eyebrow on-green">Calculadora de inadimplência</p>
           <h2>Quanto o seu condomínio<br/>deixa de receber?</h2>
-          <p>Ajuste os números do seu condomínio e veja, na hora, quanto a inadimplência tira do caixa todo ano. Com a Garantidora ZARZUR, esse valor entra integralmente no dia combinado.</p>
+          <p>Ajuste os números do seu condomínio e veja, na hora, quanto a inadimplência tira do caixa todo ano. Com a Garantidora ZARZUR, esse valor entra integralmente um dia antes do vencimento (D-1).</p>
 
           <div className="zzc-calc-field">
             <div className="lbl"><span>Unidades no condomínio</span><b>{unidades}</b></div>
@@ -274,7 +275,7 @@ function Calculadora() {
             <div><b>R$ {brl0(perdaMes)}</b><span>por mês</span></div>
             <div><b>R$ {brl0(arrecadacao)}</b><span>arrecadação/mês</span></div>
           </div>
-          <p className="zzc-calc-note">Com a Garantidora, o condomínio recebe <b>100% da arrecadação</b> no dia combinado e a ZARZUR assume a cobrança dos moradores.</p>
+          <p className="zzc-calc-note">Com a Garantidora, o condomínio recebe <b>100% da arrecadação</b> um dia antes do vencimento (D-1) e a ZARZUR assume a cobrança dos moradores.</p>
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen(msg, { origem: "calculadora", perda_ano: Math.round(perdaAno) })}>Receber análise gratuita</Btn>
           <p className="zzc-calc-fine">Estimativa ilustrativa, baseada nos valores informados. Não constitui proposta.</p>
         </div>
