@@ -5,11 +5,12 @@ import { Lu, Btn, IMG, A, waLink, waOpen, zzTrack, WA_NUMBER } from "./kit.jsx";
 function Hero({ onSimulate }) {
   return (
     <section className="zzc-hero" id="topo">
+      <img className="zzc-hero-bg" src={IMG("hero-home-wide.jpg")} alt="" aria-hidden="true" />
+      <div className="zzc-hero-overlay" />
       <img className="zzc-hero-mark" src={IMG("symbol-white.svg")} alt="" aria-hidden="true" />
       <div className="zzc-container zzc-hero-inner">
-        <p className="zzc-hero-eyebrow">Soluções financeiras para condomínios</p>
-        <h1 className="zzc-hero-title">O seu condomínio recebe todo mês, <em>no dia certo.</em></h1>
-        <p className="zzc-hero-sub">A ZARZUR assume a inadimplência do seu condomínio e garante a arrecadação antes mesmo de vencer. Você fecha o caixa sem depender de quem pagou ou deixou de pagar.</p>
+        <h1 className="zzc-hero-title">Seja qual for o problema do seu condomínio, <em>a ZARZUR estrutura a solução financeira.</em></h1>
+        <p className="zzc-hero-sub">Garantia da arrecadação, antecipação da inadimplência, empréstimo para obras sem garantia real e compra de dívida antiga. Tudo com lastro e contrato por trás.</p>
         <div className="zzc-hero-actions">
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "hero" })}>Falar com um especialista</Btn>
           <a className="zzc-hero-link" href="#calculadora">Calcular minha perda <Lu name="arrow-down" /></a>
@@ -60,7 +61,6 @@ function Services() {
     <section className="zzc-section zzc-services" id="solucoes">
       <div className="zzc-container">
         <div className="zzc-services-head">
-          <p className="zzc-eyebrow">As soluções</p>
           <h2 className="zzc-h2">Quatro caminhos para o condomínio receber sempre.</h2>
           <p className="zzc-lead">Cada uma resolve um problema diferente do caixa do condomínio. Veja qual encaixa no seu ou fale com um especialista.</p>
         </div>
@@ -120,7 +120,6 @@ function Cotacao() {
     <section className="zzc-section alt" id="cotacao">
       <div className="zzc-container zzc-sim-grid">
         <div className="zzc-sim-copy">
-          <p className="zzc-eyebrow">Crédito para obra</p>
           <h2>Diga quanto precisa.<br/>Receba a proposta no WhatsApp.</h2>
           <p className="zzc-lead">Informe o valor e a finalidade da obra. Um especialista analisa o caso e <b>retorna pelo WhatsApp</b> com uma proposta sob medida, sem compromisso.</p>
           <ul className="zzc-sim-points">
@@ -173,7 +172,6 @@ function About() {
   return (
     <section className="zzc-section" id="sobre">
       <div className="zzc-container zzc-about-solo">
-        <p className="zzc-eyebrow center">A ZARZUR</p>
         {/* ✏️ EDITAR: texto sobre a empresa */}
         <h2 className="zzc-h2">Raízes profundas, gestão tranquila.</h2>
         <p>O cedro do nosso símbolo cresce devagar e dura gerações. Enxergamos o condomínio do mesmo jeito: um patrimônio que se mantém de pé quando tem previsibilidade no caixa e cuidado de quem entende do assunto.</p>
@@ -211,7 +209,6 @@ function IntentRouter() {
     <section className="zzc-intent" id="comecar">
       <div className="zzc-container">
         <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Por onde começar</p>
           <h2 className="zzc-h2">Qual é a dor do seu condomínio hoje?</h2>
         </div>
         <div className="zzc-intent-grid">
@@ -247,7 +244,6 @@ function Calculadora() {
     <section className="zzc-calc" id="calculadora">
       <div className="zzc-container zzc-calc-grid">
         <div className="zzc-calc-copy">
-          <p className="zzc-eyebrow on-green">Calculadora de inadimplência</p>
           <h2>Quanto o seu condomínio<br/>deixa de receber?</h2>
           <p>Ajuste os números do seu condomínio e veja, na hora, quanto a inadimplência tira do caixa todo ano. Com a Garantidora ZARZUR, esse valor entra integralmente um dia antes do vencimento (D-1).</p>
 

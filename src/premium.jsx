@@ -13,7 +13,6 @@ function ParaQuem() {
     <section className="zzc-section" id="para-quem">
       <div className="zzc-container">
         <div className="zzc-section-head">
-          <p className="zzc-eyebrow">Para quem</p>
           <h2 className="zzc-h2">Feito para quem cuida do condomínio.</h2>
           <p className="zzc-lead">Soluções financeiras para os três lados da gestão condominial, sempre com lastro e contrato por trás.</p>
         </div>
@@ -41,7 +40,6 @@ function ComoFunciona() {
     <section className="zzc-section alt" id="como-funciona">
       <div className="zzc-container">
         <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Como funciona</p>
           <h2 className="zzc-h2">Três passos até a tranquilidade.</h2>
         </div>
         <div className="zzc-steps">
@@ -101,7 +99,6 @@ function FAQ() {
     <section className="zzc-section" id="faq">
       <div className="zzc-container zzc-faq-wrap">
         <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Dúvidas frequentes</p>
           <h2 className="zzc-h2">Perguntas que todo síndico faz.</h2>
         </div>
         <div className="zzc-faq">
@@ -145,7 +142,6 @@ function Contato({ onSimulate }) {
       <img className="zzc-contact-wm" src={IMG("symbol-gold.svg")} alt="" />
       <div className="zzc-container zzc-contact-grid">
         <div className="zzc-contact-intro">
-          <p className="zzc-eyebrow on-green">Contato</p>
           <h2>Atendimento próximo,<br/>onde o seu condomínio estiver.</h2>
           <p>Fale com a ZARZUR em São Paulo ou no Espírito Santo. Chame no WhatsApp, ligue ou peça que um especialista entre em contato.</p>
           <Btn variant="gold" icon="message-circle" onClick={() => waOpen("Olá! Vim pelo site da ZARZUR e quero falar com um especialista.", { origem: "secao_contato" })}>Falar no WhatsApp</Btn>
@@ -198,7 +194,6 @@ function Garantias() {
     <section className="zzc-section alt" id="seguranca">
       <div className="zzc-container">
         <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Como garantimos o seu repasse</p>
           <h2 className="zzc-h2">A garantia tem estrutura por trás.</h2>
           <p className="zzc-lead" style={{ margin: "0 auto" }}>
             Garantir a receita de um condomínio é responsabilidade séria, e responsabilidade precisa de lastro e contrato por trás. Veja como a ZARZUR estrutura essa confiança.
@@ -225,7 +220,6 @@ function CasoReal() {
     <section className="zzc-section" id="casos">
       <div className="zzc-container">
         <div className="zzc-section-head center">
-          <p className="zzc-eyebrow center">Caso real</p>
           <h2 className="zzc-h2">Da reforma improvisada à obra que dura.</h2>
         </div>
         <article className="zzc-caso">
@@ -233,7 +227,7 @@ function CasoReal() {
             <div className="zzc-caso-tag"><Lu name="hard-hat" />Empréstimo para obra</div>
             <h3>Condomínio residencial · Jardim Camburi, Vitória/ES</h3>
             <p className="zzc-caso-lead">
-              Sem crédito, o condomínio continuaria fazendo só reparos pontuais na cobertura, ano após ano, sem nunca resolver o problema de verdade.
+              Sem crédito, o condomínio continuaria fazendo reparos pontuais na cobertura, ano após ano, sem nunca resolver a causa.
             </p>
             <div className="zzc-caso-steps">
               <div>
