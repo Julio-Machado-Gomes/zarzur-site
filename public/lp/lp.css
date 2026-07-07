@@ -321,3 +321,6 @@
 .lp-compare-card--on li{color:var(--zz-ink)}
 .lp-compare-card--on li i{color:var(--zz-green)}
 @media(max-width:820px){.lp-compare{grid-template-columns:1fr;gap:16px}}
+
+/* CTA de meio de página */
+.lp-mid-cta{display:flex;justify-content:center;margin-top:44px}
