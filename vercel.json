@@ -1,10 +1,22 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "zarzurgarantidora.com.br" }],
+      "destination": "https://www.zarzurgarantidora.com.br/$1",
+      "permanent": true
+    },
+    { "source": "/lp/garantidora.html",    "destination": "/garantidora",    "permanent": true },
+    { "source": "/lp/emprestimo.html",     "destination": "/emprestimo",     "permanent": true },
+    { "source": "/lp/compra-garantida.html","destination": "/compra-garantida","permanent": true },
+    { "source": "/lp/compra-de-divida.html","destination": "/compra-de-divida","permanent": true }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/garantidora", "destination": "/lp/garantidora.html" },
-    { "source": "/emprestimo", "destination": "/lp/emprestimo.html" },
+    { "source": "/garantidora",      "destination": "/lp/garantidora.html" },
+    { "source": "/emprestimo",       "destination": "/lp/emprestimo.html" },
     { "source": "/compra-garantida", "destination": "/lp/compra-garantida.html" },
     { "source": "/compra-de-divida", "destination": "/lp/compra-de-divida.html" }
   ],
@@ -12,7 +24,7 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Origin",  "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
       ]
